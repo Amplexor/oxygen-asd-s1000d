@@ -1,0 +1,243 @@
+/*
+ * CSS for the Service-Bulletin dedicated elements
+ */
+
+sb {
+    counter-reset: sbpart;
+    counter-reset: sbpart2;
+    
+    counter-reset: sbTopic;
+}
+
+sbManagementInfo:before {
+    display:block;
+    content: counter(sbpart) ". Management Information";
+    font-weight:bold;
+    text-decoration: underline;
+    margin-left:-1cm;
+}
+
+sbManagementInfo {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+}
+
+sbManagementInfo > * {
+    margin-left: 1cm;
+} 
+
+sbCompliance:before {
+    display: block;
+    content: "Compliance: " attr(sbComplianceCategory);
+}
+sbTaskType:before {
+    display:block;
+    content: "Task type: " attr(sbTaskCategory);
+}
+
+sbProductModificationList:before {
+    display:block;
+    content: "Product Modification List: ";    
+}
+sbProductModificationList {
+    list-style: disc;
+}
+
+sbProductModificationList!>noInfo {
+    display:block;
+}
+
+sbProductModification:before {
+    content: "[" attr(sbModificationClassification) "] ";
+}
+sbProductModification {
+	display: list-item;
+	margin-left: 1cm;
+	list-style-position: outside;
+}
+
+sbImpactList:before {
+    display:block;
+    content: "Impact List: ";    
+}
+sbImpactList {
+    display: block;
+}
+
+sbImpact:before {
+    content: "Type:" attr(sbImpactType) " ";
+}
+
+sbImpact {
+    display:block;
+    
+}
+
+sbImpact > quantity:before {
+    content: "Quantity(ies) type " attr(quantityType) " ";
+}
+quantityValue {
+    display:inline-block;
+}
+quantityValue:after {
+    content: attr(quantityUnitOfMeasure);
+}
+
+/*
++sbCompliance
++sbTaskType
++sbProductModificationList
+sbImpactList
+sbConcurrentSbList
+sbAccomplishmentLimit
+sbTimeAssessment
+sbOriginalIssueDate
+sbApproval
+sbApprovedDm
+genericPropertyGroup
+*/
+
+
+
+sbRevisionInfo:before {
+    display:block;
+    content: counter(sbpart) ". Revision Information";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+
+sbRevisionInfo {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+}
+
+
+
+sbSummary:before {
+    display:block;
+    content: counter(sbpart) ". Summary";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+sbSummary {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+    
+}
+
+
+
+sbPlanningInfo:before {
+    display:block;
+    content: counter(sbpart) ". Planning";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+
+sbPlanningInfo {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+    
+}
+
+
+
+sbMaterialInfo:before {
+    display:block;
+    content: counter(sbpart) ". Material Information";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+sbMaterialInfo {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+    
+}
+
+
+
+
+sbAccomplishmentInstructions:before {
+    display:block;
+    content: counter(sbpart) ". Accomplishment instructions";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+sbAccomplishmentInstructions {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+    
+}
+
+
+
+
+sbAdditionalInfo:before {
+    display:block;
+    content: counter(sbpart) ". Additional Information";
+    font-weight:bold;
+    text-decoration: underline;
+}
+
+sbAdditionalInfo {
+    display: block;
+    margin-top:0.5cm;
+    counter-increment: sbpart;
+    counter-reset: sbpart2;
+    counter-reset: sbTopic;
+    
+}
+
+
+
+
+/* common elements */
+
+sbTopic > *:first-child:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+
+sbTopic {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+}
+
+sbTopicContent {
+    margin-left: 1cm;
+}
+
+noInfo:before {
+    content: "No information.";
+    font-style: italic;
+    margin-left: 1cm;
+    display: block;
+}
+
+noInfo {
+    
+}

@@ -1,0 +1,9 @@
+@import "docbook.css";
+
+colspec, spanspec, col {
+  display: none !important;
+}
+
+tgroup:before {
+  display: none !important;
+}

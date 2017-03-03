@@ -1,0 +1,18 @@
+/* Traitement des figures, graphiques etc. */
+
+
+figure {
+    display:block;
+    counter-increment: figure;
+    text-align:center;
+    padding: 0.5cm;
+}
+
+figure>title:before {
+    -oxy-prepend-content:"Fig. " counter(figure) " - ";
+}
+
+
+graphic {
+    content: url("graphic.jpg");
+}

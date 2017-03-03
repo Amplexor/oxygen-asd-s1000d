@@ -1,0 +1,258 @@
+@import "rdf.css";
+@import "idstatus.css";
+@import "cals_table.css";
+@import "figure.css";
+@import "descript.css";
+@import "proced.css";
+@import "maint.css";
+
+@import "sb.css";
+
+/* gestion des tableaux : reprendre ce qui est fait dans Docbook */
+
+
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+
+@namespace xlink url('http://www.w3.org/1999/xlink');
+
+
+oxy|document {
+	display:block !important;
+	font-family: Arial !important; 
+}
+
+oxy|comment {
+    display: none!important;
+}
+
+/* The data module*/
+ 
+dmodule {
+	display:block;
+	font-family: Arial !important;
+	font-size: 10pt;
+}
+dmodule:after {
+    display: block;
+    text-align:center;
+    font-weight: bold;
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
+    margin-top: 12pt;
+    content:"- End of data module -";
+}
+
+
+infoName:before {
+	content: " - ";
+}
+
+language {
+    content: "-" attr(countryIsoCode);
+}
+
+/* Debut du contenu du DM */
+content:before {
+	display:block; 
+	font-weight: bold;
+	color: blue;
+	content: "Content of the DM:";
+	margin-top: 12pt;
+}
+
+content {
+	display:block;
+	counter-reset: figure;
+}
+
+
+/* Types de contenu (procedural, descriptif, ...) */
+process, crew, procedure, description, schedule {
+	display:block;
+}
+
+
+
+
+/* Common elements : warning, caution, para, listes */
+
+warning {
+	display: block;
+	font-weight: bold;
+	color: red;
+}
+
+caution {
+	display: block;
+	color: red;
+}
+
+title {
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+simplePara, para {
+	display: block;
+}
+
+emphasis {
+	font-weight: bold;
+}
+
+levelledPara {
+    display: block;
+    margin-left:1cm;
+}
+
+randomList {
+	list-style: disc;
+}
+
+randomList listItem {
+	display: list-item;
+	margin-left: 1cm;
+	list-style-position: outside;
+}
+
+
+dmCode {
+    content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
+}
+
+internalRef {
+    content:attr(internalRefId);
+    color: blue;
+    text-decoration:underline;
+}
+
+/* refs */
+refs:before {
+	content:"References";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+refs {
+	display:table;
+	margin-bottom: 0.5cm;
+	empty-cells: show;
+}
+
+refs > dmRef {
+	display: table-row;
+}
+
+/* Entete du tableau */
+refs > dmRef:first-child > dmRefIdent:before {
+	display: table-cell;
+	content:"Identification";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	background-color:#CCCCCC;
+}
+
+refs > dmRef:first-child > dmRefAddressItems:before {
+	display: table-cell;
+	content:"Address";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	background-color:#CCCCCC;
+}
+
+refs > dmRef:first-child > dmRefIdent {
+	border-top: 1pt solid black;
+}
+
+refs > dmRef:first-child > dmRefAddressItems {
+	border-top: 1pt solid black;
+}
+
+refs > dmRef > dmRefIdent {
+	display: table-cell;
+	width: 8cm;
+	border-bottom: 1pt solid black;
+}
+
+refs > dmRef > dmRefAddressItems {
+	display: table-cell;
+	width:12cm;
+	border-bottom: 1pt solid black;
+}
+
+
+
+/* APPLICABILITY MANAGEMENT */
+
+applic {
+    
+}
+
+/* FIXME: cas qui ne fonctionne pas = un evaluate contenant (evaluate, assert, evaluate) */
+/*
+applic > evaluate:before {
+    content:"(";
+}
+applic > evaluate:after {
+    content: ""!important;
+}
+
+evaluate > assert:first-child:before {
+    content:""!important;
+}
+evaluate > assert:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " ");
+}
+
+evaluate > evaluate:first-child:before {
+    content:"("!important;
+}
+evaluate > evaluate:before {
+    content:oxy_concat(") ", oxy_xpath("../@andOr"), " (");
+}
+evaluate:last-child:after {
+    content:")";
+}
+*/
+/*
+assert:before {
+    content:"(";
+}
+evaluate:before {
+    content:"(";
+}*/
+evaluate > assert:first-child:before {
+    content:"("!important;
+}
+evaluate > assert:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " (");
+}
+evaluate > evaluate:first-child:before {
+    content:"["!important;
+}
+evaluate > evaluate:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " [");
+}
+
+assert:after {
+    content:")";
+}
+evaluate:after {
+    content:"]";
+}
+applic > evaluate:after {
+    content:""!important;
+}
+
+
+evaluate {
+
+}
+
+assert {
+    /* TODO traiter les deux cas  applicPropertyType="prodattr | condition" */
+    content:attr(applicPropertyIdent) '="' attr(applicPropertyValues) '"';
+}
+

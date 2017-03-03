@@ -1,0 +1,30 @@
+/* RDF description */
+@namespace dc url('http://www.purl.org/dc/elements/1.1/');
+@namespace rdf url('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+
+
+rdf|Description:before {
+    display:block;
+    content:"Rdf description section";
+}
+
+rdf|Description {
+    display:block;
+	-oxy-foldable:true;
+	-oxy-folded:true;
+}
+
+dc|*:before, dc|title:before {
+	content:oxy_name();
+	display:inline;
+	width:5cm;
+	font-weight: normal;
+	text-decoration: none;
+}
+
+
+dc|*, dc|title {
+    display:block;
+    font-weight: normal!important;
+    text-decoration: none!important;
+}

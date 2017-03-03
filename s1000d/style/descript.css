@@ -1,0 +1,80 @@
+
+/* raz pour tous les compteurs de niveau des descriptions */
+description {
+    counter-reset: levelledPara1;
+    counter-reset: levelledPara2;
+    counter-reset: levelledPara3;
+    counter-reset: levelledPara4;
+    counter-reset: levelledPara5;
+    counter-reset: levelledPara6;
+}
+
+
+levelledPara > para {
+    margin-left: 1cm;
+}
+
+/* Incrémentation de la numérotation en fonction du niveau d'imbrication + indentation */
+levelledPara > levelledPara > levelledPara > levelledPara > levelledPara {
+    counter-increment: levelledPara6;
+    margin-left:1cm;
+}
+
+levelledPara > levelledPara > levelledPara > levelledPara {
+    counter-increment: levelledPara5;
+    counter-reset: levelledPara6;
+    margin-left:1cm;
+}
+
+levelledPara > levelledPara > levelledPara > levelledPara {
+    counter-increment: levelledPara4;
+    counter-reset: levelledPara5;
+    counter-reset: levelledPara6;
+    margin-left:1cm;
+}
+
+levelledPara > levelledPara > levelledPara {
+    counter-increment: levelledPara3;
+    counter-reset: levelledPara4;
+    counter-reset: levelledPara5;
+    counter-reset: levelledPara6;
+    margin-left:1cm;
+}
+
+levelledPara > levelledPara {
+    counter-increment: levelledPara2;
+    counter-reset: levelledPara3;
+    counter-reset: levelledPara4;
+    counter-reset: levelledPara5;
+    counter-reset: levelledPara6;
+    margin-left:1cm;
+}
+
+levelledPara {
+    counter-increment: levelledPara1;
+    counter-reset: levelledPara2;
+    counter-reset: levelledPara3;
+    counter-reset: levelledPara4;
+    counter-reset: levelledPara5;
+    counter-reset: levelledPara6;
+    margin-bottom:0.5cm;
+}
+
+/* Ajout de la numérotation en fonction du niveau d'imbrication */
+levelledPara > levelledPara > title:before {
+    content: counter(levelledPara2) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+levelledPara > title:before {
+    content: counter(levelledPara1) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+/*
+levelledPara > title {
+    -oxy-prepend-content: counter(levelledPara1) ". ";
+}
+*/

@@ -1,0 +1,149 @@
+/* Identification and status */
+
+identAndStatusSection:before {
+	display:block;
+	font-weight: bold;
+	color: blue;
+	content: "Identification and status:";
+}
+
+identAndStatusSection {
+	display:block;
+	-oxy-foldable:true;
+}
+
+/* dmAddress */
+dmAddress > dmIdent > dmCode:before {
+    font-weight:bold;
+    content:"Data module code: ";
+}
+dmAddressItems > issueDate:before {
+    font-weight:bold;
+    content:"Issue date: ";
+}
+dmAddressItems > issueDate {
+    display: block;
+    content: attr(day) "-" attr(month) "-" attr(year);
+}
+
+dmAddressItems > dmTitle {
+	display: block;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14pt;
+	color: blue;
+}
+
+/* Status */
+dmStatus {
+	-oxy-foldable:true;
+	-oxy-folded:true;
+}
+
+issueInfo {
+    content : " rev. " attr(issueNumber);
+}
+security:before {
+    content :"Security information: ";
+    color: fuchsia;
+    font-weight: bold;
+
+}
+security {
+    display:block;
+    content: attr(securityClassification) " " attr(commercialClassification) " " attr(caveat);
+}
+
+
+copyright:before {
+    display:block;
+    font-weight: bold;
+    color: fuchsia;
+    content: "Copyright information";
+}
+copyright {
+    display:block;
+}
+
+responsiblePartnerCompany:before {
+    content :"Responsible partner company: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+originator:before {
+    content :"Originator: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+responsiblePartnerCompany, originator {
+    display:block;
+    -oxy-prepend-content: attr(enterpriseCode) " - ";
+}
+
+dmStatus > applic:before {
+    content :"Applicability: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+dmStatus > applic {
+    display:block;
+}
+
+dmStatus > techStandard:before {
+    content :"Technical standard: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+dmStatus > techStandard {
+    display:block;
+}
+
+brexDmRef {
+    display:block;
+}
+
+qualityAssurance {
+    display:block;    
+}
+
+systemBreakdownCode {
+    display:block;    
+}
+
+reasonForUpdate:first-of-type:before {
+    -oxy-prepend-content :"Reason(s) for update(s): ";
+    color: fuchsia !important;
+    font-weight: bold !important;
+    display:block !important;
+}
+
+reasonForUpdate > simplePara:first-child:before {
+    -oxy-prepend-content: oxy_concat("Update ", oxy_xpath("../@id"), " / ", oxy_xpath("../@updateReasonType"));
+    display:block;
+    font-weight:bold;
+    color:black;
+}
+
+reasonForUpdate {
+    display:block;
+    font-weight:normal!important;
+}
+
+/*
+reasonForUpdate:before {
+    -oxy-append-content:attr(id);
+    display:table-cell;
+    width:150pt;
+    border: 1pt solid black;
+}
+reasonForUpdate:before {
+    -oxy-append-content:attr(updateReasonType);
+    display:table-cell;
+    width:200pt;
+    border: 1pt solid black;
+}
+reasonForUpdate {
+    display:table-row;
+}
+*/
+

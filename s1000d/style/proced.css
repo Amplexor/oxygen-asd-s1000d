@@ -1,0 +1,367 @@
+
+
+
+/* PRELIMINARY REQUIREMENTS (pour procedure) */
+preliminaryRqmts {
+    display: block;
+    -oxy-foldable:true;
+}
+
+preliminaryRqmts:before {
+	content:"Preliminary requirements";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* conditions */
+reqCondGroup {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqCondGroup:before {
+	content: "Cond";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+noConds {
+	content: "No condition.";
+	display:block;
+	margin-left: 1cm;
+	font-style: italic;
+	margin-bottom: 0.5cm;
+}
+
+/* -- List of persons -- */
+reqPersons {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqPersons:before {
+	content: "Persons";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+reqTechInfoGroup {
+    display: block;
+}
+
+reqTechInfoGroup:before {
+	content: "TechInfo";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/* -- List of support equipments -- */
+reqSupportEquips {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqSupportEquips:before {
+	content: "Ground support equipments";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+supportEquipDescrGroup {
+    display:table;
+}
+
+supportEquipDescr {
+    display: table-row;
+}
+
+supportEquipDescr:first-child > name:before {
+	display: table-cell;
+	content:"Description";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+	
+}
+
+supportEquipDescr > name {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    width: 10cm;
+}
+
+supportEquipDescr:first-child > identNumber:before {
+	display: table-cell;
+	content:"Identification";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+	
+}
+
+supportEquipDescr > identNumber {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    width: 8cm;
+}
+
+supportEquipDescr:first-child > reqQuantity:before {
+	display: table-cell;
+	content:"Quantity";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+}
+
+supportEquipDescr > reqQuantity {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    text-align:right;
+    width: 3cm;
+}
+
+noSupportEquips {
+	content: "No support equipment.";
+	display:block;
+	margin-left: 1cm;
+	font-style: italic;
+	margin-bottom: 0.5cm;
+}
+
+/* -- Liste of Supplies -- */
+reqSupplies {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqSupplies:before {
+	content: "Supplies";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+supplyDescrGroup {
+    display:table;
+}
+
+supplyDescr {
+    display: table-row;
+}
+
+supplyDescr:first-child > name:before {
+	display: table-cell;
+	content:"Description";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+}
+
+supplyDescr > name {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    width: 10cm;
+}
+
+supplyDescr:first-child > identNumber:before {
+	display: table-cell;
+	content:"Identification";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+}
+
+supplyDescr > identNumber {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    width: 8cm;
+}
+
+supplyDescr:first-child > reqQuantity:before {
+	display: table-cell;
+	content:"Quantity";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;
+}
+
+supplyDescr > reqQuantity {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    text-align:right;
+    width: 3cm;
+}
+
+noSupplies {
+	content: "No supplies.";
+	display:block;
+	margin-left: 1cm;
+	font-style: italic;
+	margin-bottom: 0.5cm;
+}
+
+
+/* -- List of Spares -- */
+reqSpares {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqSpares:before {
+	content: "Spares";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+noSpares {
+	content: "No spares.";
+	display:block;
+	margin-left: 1cm;
+	font-style: italic;
+	margin-bottom: 0.5cm;
+}
+
+/* Safety  */
+reqSafety {
+	display: block;
+    margin-bottom: 0.5cm;
+}
+
+reqSafety:before {
+	content: "Safety requirements";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+noSafety {
+	content: "No safety requirement.";
+	display:block;
+	margin-left: 1cm;
+	font-style: italic;
+	margin-bottom: 0.5cm;
+}
+
+/* PROCEDURE CONTENT */
+procedure:before {
+	content: "Procedure";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+}
+
+procedure {
+    counter-reset: proceduralStep1;
+    counter-reset: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+}
+
+mainProcedure {
+    display:block;
+    -oxy-foldable: true;
+}
+
+mainProcedure:before {
+	content: "Main procedure";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+proceduralStep > para {
+    margin-left: 1cm;
+}
+
+/* Incrémentation de la numérotation en fonction du niveau d'imbrication + indentation */
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+    counter-increment: proceduralStep6;
+    margin-left:1cm;
+}
+
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+    counter-increment: proceduralStep5;
+    counter-reset: proceduralStep6;
+    margin-left:1cm;
+}
+
+proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+    counter-increment: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+    margin-left:1cm;
+}
+
+proceduralStep > proceduralStep > proceduralStep {
+    counter-increment: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+    margin-left:1cm;
+}
+
+proceduralStep > proceduralStep {
+    counter-increment: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+    margin-left:1cm;
+}
+
+proceduralStep {
+    counter-increment: proceduralStep1;
+    counter-reset: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+    margin-bottom:0.5cm;
+}
+
+/* Ajout de la numérotation en fonction du niveau d'imbrication */
+proceduralStep > proceduralStep > proceduralStep > *:first-child:before {
+    content: counter(proceduralStep3) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+proceduralStep > proceduralStep > *:first-child:before {
+    content: counter(proceduralStep2) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+proceduralStep > *:first-child:before {
+    content: counter(proceduralStep1) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+
+closeRqmts:before {
+	content:"Close-up requirements";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+closeRqmts {
+    display: block;
+    -oxy-foldable:true;
+}

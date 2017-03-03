@@ -1,0 +1,24 @@
+
+maintPlanning {
+    display:block;
+    -oxy-foldable: true;
+}
+
+maintPlanning:before {
+	content: "Maintenance planning";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+taskDefinition {
+    display:block;
+    border: 1pt solid green;
+    margin: 2pt;
+}
+
+taskDescr {
+    margin:2pt;
+    font-style:italic;
+}
