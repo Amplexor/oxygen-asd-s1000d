@@ -1,0 +1,71 @@
+/* ***************************************************
+
+  Cross-reference tables :
+    - applicability
+    - product
+    
+***************************************************** */
+
+
+/* Applic */
+applicCrossRefTable:before {
+    content: "Applic cross-reference table";
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+applicCrossRefTable {
+    display: block;
+}
+
+productAttribute {
+    display: block;
+}
+
+
+/* Products */
+productCrossRefTable:before {
+    content: "Product cross-reference table";
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+productCrossRefTable {
+    display: block;
+}
+
+referencedApplicGroup, referencedApplicGroupRef {
+    display: block;
+}
+productCrossRefTable {
+    display: block;
+}
+product:before {
+    content: "PRODUCT:";
+    text-decoration: underline;
+    display: block;
+}
+product {
+    display: block;
+    margin-left: 15pt;
+}
+
+assign {
+    display: block;
+    content: "Property" 
+       oxy_textfield(
+          edit, '@applicPropertyIdent',
+          columns, 40)
+       " Type "
+       oxy_textfield(
+          edit, '@applicPropertyType',
+          columns, 40)
+       " Value"
+       oxy_textfield(
+          edit, '@applicPropertyValue',
+          columns, 40)
+    
+    /*applicPropertyIdent="serialno" applicPropertyType="prodattr" applicPropertyValue */
+}

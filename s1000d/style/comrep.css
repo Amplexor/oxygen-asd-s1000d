@@ -1,0 +1,133 @@
+
+commonRepository:before {
+	content: "Common repository";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+}
+
+commonRepository {
+    display: block;
+}
+
+
+/* */
+
+functionalItemRepository:before {
+    content: "Functional itemps repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+functionalItemRepository {
+    display:block;
+	padding-left: 12pt;
+}
+functionalItemSpec {
+    display: block;
+}
+
+functionalItemIdent {
+    width: 40pt;
+}
+
+
+/* */
+zoneRepository:before {
+    content: "Zones repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+zoneRepository {
+    display:block;
+	padding-left: 12pt;
+}
+zoneSpec {
+    display: block;
+}
+zoneIdent {
+    width: 40pt;
+    content: attr(zoneNumber);
+}
+zoneRef {
+    width: 40pt;
+    content: attr(zoneNumber);
+}
+
+
+
+
+
+/*  */
+supplyRqmtRepository:before {
+    content: "Functional physical area repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+supplyRqmtRepository {
+    display:block;
+	padding-left: 12pt;
+}
+
+/*  */
+functionalPhysicalAreaRepository:before {
+    content: "Functional physical area repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+functionalPhysicalAreaRepository {
+    display:block;
+	padding-left: 12pt;
+}
+
+/*  */
+controlIndicatorRepository:before {
+    content: "Control indicators repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+controlIndicatorRepository {
+    display:block;
+	padding-left: 12pt;
+}
+
+/*  */
+applicRepository:before {
+    content: "Applic repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+applicRepository {
+    display:block;
+	padding-left: 12pt;
+}
+
+/*  */
+warningRepository:before {
+    content: "Warnings repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+warningRepository {
+    display:block;
+	padding-left: 12pt;
+}
+
+/*  */
+cautionRepository:before {
+    content: "Cautions repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+cautionRepository {
+    display:block;
+	padding-left: 12pt;
+}

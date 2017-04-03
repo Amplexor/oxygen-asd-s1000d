@@ -1,0 +1,23 @@
+
+
+frontMatterTableOfContent:before {
+	content: "Table of Contents";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+}
+
+frontMatterTableOfContent {
+    display: block;
+}
+
+tocList {
+    display: block;
+    margin-left: 12pt;
+}
+
+tocEntry {
+    display: block;
+    margin-left: 12pt;
+}

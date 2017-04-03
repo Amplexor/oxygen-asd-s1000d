@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="15.2" xml:space="preserve">
-	<map>
+<serialized version="18.0" xml:space="preserve">
+	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
 				<documentTypeDescriptor>
+					<field name="extensionPatch">
+						<null/>
+					</field>
 					<field name="name">
 						<String>S1000D</String>
 					</field>
@@ -37,6 +40,9 @@
 							<field name="mergeCSSsFromDocument">
 								<Boolean>false</Boolean>
 							</field>
+							<field name="multipleAlternateSelectionEnabled">
+								<Boolean>false</Boolean>
+							</field>
 							<field name="actionDescriptors">
 								<action-array/>
 							</field>
@@ -54,6 +60,9 @@
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array/>
 									</field>
+									<field name="context">
+										<null/>
+									</field>
 								</menu>
 							</field>
 							<field name="popupMenuDescriptor">
@@ -69,6 +78,9 @@
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array/>
+									</field>
+									<field name="context">
+										<null/>
 									</field>
 								</menu>
 							</field>
@@ -107,16 +119,28 @@
 							<field name="tableSupportClassName">
 								<null/>
 							</field>
+							<field name="tableCellSeparatorSupportClassName">
+								<null/>
+							</field>
 							<field name="tableColWidthSupportClassName">
 								<null/>
 							</field>
 							<field name="customReferencesResolver">
 								<null/>
 							</field>
+							<field name="editPropertiesHandler">
+								<null/>
+							</field>
 							<field name="authorExtensionStateListener">
 								<null/>
 							</field>
 							<field name="attributesRecognizer">
+								<null/>
+							</field>
+							<field name="authorActionEventHandler">
+								<null/>
+							</field>
+							<field name="authorImageDecorator">
 								<null/>
 							</field>
 						</authorExtension>
@@ -165,7 +189,94 @@
 						</documentTypeRule-array>
 					</field>
 					<field name="scenarios">
-						<scenario-array/>
+						<scenario-array>
+							<scenario>
+								<field name="advancedOptionsMap">
+									<null/>
+								</field>
+								<field name="name">
+									<String>PDF - Preview standard</String>
+								</field>
+								<field name="baseURL">
+									<String></String>
+								</field>
+								<field name="footerURL">
+									<String></String>
+								</field>
+								<field name="fOPMethod">
+									<String>pdf</String>
+								</field>
+								<field name="fOProcessorName">
+									<String>Antenna House</String>
+								</field>
+								<field name="headerURL">
+									<String></String>
+								</field>
+								<field name="inputXSLURL">
+									<String>${framework}/style_xsl/pdf/s1000d_4.1_AH/preview.xsl</String>
+								</field>
+								<field name="inputXMLURL">
+									<String>${currentFileURL}</String>
+								</field>
+								<field name="defaultScenario">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="isFOPPerforming">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="type">
+									<String>XML</String>
+								</field>
+								<field name="saveAs">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="openInBrowser">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="outputFile">
+									<File>temp/${cfn}-${timeStamp}.pdf</File>
+								</field>
+								<field name="outputResource">
+									<String>temp/${cfn}-${timeStamp}.pdf</String>
+								</field>
+								<field name="openOtherLocationInBrowser">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="locationToOpenInBrowserURL">
+									<null/>
+								</field>
+								<field name="openInEditor">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInHTMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInXMLPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInSVGPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="showInResultSetPane">
+									<Boolean>false</Boolean>
+								</field>
+								<field name="useXSLTInput">
+									<Boolean>true</Boolean>
+								</field>
+								<field name="xsltParams">
+									<list/>
+								</field>
+								<field name="cascadingStylesheets">
+									<String-array/>
+								</field>
+								<field name="xslTransformer">
+									<String>Saxon-HE</String>
+								</field>
+								<field name="extensionURLs">
+									<String-array/>
+								</field>
+							</scenario>
+						</scenario-array>
 					</field>
 					<field name="validationScenarios">
 						<validationScenario-array/>
@@ -174,7 +285,9 @@
 						<null/>
 					</field>
 					<field name="defaultTransformationScenarios">
-						<null/>
+						<list>
+							<String>PDF - Preview standard</String>
+						</list>
 					</field>
 					<field name="extensionsBundleClassName">
 						<null/>
@@ -207,7 +320,7 @@
 						<null/>
 					</field>
 					<field name="priority">
-						<Integer>3</Integer>
+						<Integer>4</Integer>
 					</field>
 					<field name="xmlNodeCustomizerExtension">
 						<null/>
@@ -221,5 +334,5 @@
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</map>
+	</serializableOrderedMap>
 </serialized>
