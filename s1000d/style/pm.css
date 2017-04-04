@@ -1,0 +1,131 @@
+
+@import "rdf.css";
+@import "idstatus.css";
+
+@import "applic.css";
+
+
+
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+
+@namespace xlink url('http://www.w3.org/1999/xlink');
+
+oxy|document {
+	display:block !important;
+	font-family: Arial !important; 
+}
+
+oxy|comment {
+    display: none!important;
+}
+
+/* The data module*/
+
+pm {
+	display:block;
+	font-family: Arial !important;
+	font-size: 10pt;
+	margin:12pt;
+	padding:12pt;
+	border: 1pt solid #AAAAAA;
+}
+
+pm:after {
+    display: block;
+    text-align:center;
+    font-weight: bold;
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
+    margin-top: 12pt;
+    content:"- End of publication module -";
+}
+
+identAndStatusSection > pmAddress > pmAddressItems {
+    display: block;
+    text-align: center;
+}
+
+identAndStatusSection > pmAddress > pmAddressItems > issueDate {
+    display: block;
+}
+
+identAndStatusSection > pmAddress > pmAddressItems > pmTitle {
+    color: blue;
+    font-size: 14pt;
+    font-weight: bold;
+    padding-top: 6pt;
+	padding-bottom: 6pt;
+}
+
+identAndStatusSection > pmAddress > pmAddressItems > shortPmTitle:before {
+    content: " (";
+}
+identAndStatusSection > pmAddress > pmAddressItems > shortPmTitle:after {
+    content: " )";
+}
+identAndStatusSection > pmAddress > pmAddressItems > shortPmTitle {
+    color: blue;
+    font-size: 14pt;
+    font-weight: bold;
+    font-style: italic;
+    padding-top: 6pt;
+	padding-bottom: 6pt;
+
+}
+
+content:before {
+	display:block; 
+	font-weight: bold;
+	color: blue;
+	content: "Content of the PM:";
+	margin-top: 12pt;
+	margin-bottom: 12pt;
+}
+
+content {
+	display:block;
+}
+
+
+
+pmEntry {
+    display: block;
+    padding-left: 12pt;
+}
+
+pmEntryTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    margin-bottom: 6pt;
+}
+
+
+pmRef:before {
+    content: url("book_link.png");
+}
+
+pmEntry > dmRef:before {
+    content: url("page_white_link.png") " " !important;
+}
+dmCode {
+    content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" 
+        attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" 
+        attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" 
+        attr(infoCodeVariant) "-" attr(itemLocationCode);
+}
+pmCode {
+    content: attr(modelIdentCode) "-" attr(pmIssuer) "-" attr(pmNumber) "-" attr(pmVolume);
+    /*  modelIdentCode="S1000DBIKE" pmIssuer="C3002" pmNumber="EPWG1" pmVolume="00" */
+}
+
+language {
+    content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
+}
+
+pmRef pmTitle {
+    display: inline;
+}
+
+issueDate {
+    content: attr(year) "-" attr(month) "-" attr(day);
+}

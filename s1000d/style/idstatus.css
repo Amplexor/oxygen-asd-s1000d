@@ -32,12 +32,21 @@ dmAddressItems > dmTitle {
 	font-weight: bold;
 	font-size: 14pt;
 	color: blue;
+	padding-top: 6pt;
+	padding-bottom: 6pt;
 }
 
 /* Status */
-dmStatus {
+dmStatus:before, pmStatus:before {
+    content: "Status";
+    font-weight: bold;
+}
+dmStatus, pmStatus {
 	-oxy-foldable:true;
 	-oxy-folded:true;
+	padding: 6pt;
+	border: 1pt solid #666666;
+	background-color: #FADCC1;
 }
 
 issueInfo {

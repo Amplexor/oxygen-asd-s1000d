@@ -1,0 +1,49 @@
+
+@import "rdf.css";
+@import "idstatus.css";
+
+@import "applic.css";
+
+
+
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+
+@namespace xlink url('http://www.w3.org/1999/xlink');
+
+
+oxy|document {
+	display:block !important;
+	font-family: Arial !important; 
+}
+
+oxy|comment {
+    display: none!important;
+}
+
+/* The data module*/
+
+pm {
+	display:block;
+	font-family: Arial !important;
+	font-size: 10pt;
+}
+
+pm:after {
+    display: block;
+    text-align:center;
+    font-weight: bold;
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
+    margin-top: 12pt;
+    content:"- End of publication module -";
+}
+
+pmEntry {
+    display: block;
+    padding-left: 12pt;
+}
+
+pmEntryTitle {
+    font-weight: bold;
+    text-decoration: underline;
+}

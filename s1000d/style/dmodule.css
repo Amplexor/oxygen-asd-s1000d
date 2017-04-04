@@ -1,6 +1,7 @@
 
 @import "rdf.css";
 @import "idstatus.css";
+@import "applic.css";
 @import "cals_table.css";
 @import "figure.css";
 @import "descript.css";
@@ -12,8 +13,10 @@
 
 @import "sb.css";
 
-/* gestion des tableaux : reprendre ce qui est fait dans Docbook */
 
+@import "brex.css";
+
+/* gestion des tableaux : reprendre ce qui est fait dans Docbook */
 
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
 
@@ -35,6 +38,9 @@ dmodule {
 	display:block;
 	font-family: Arial !important;
 	font-size: 10pt;
+	margin:12pt;
+	padding:12pt;
+	border: 1pt solid #AAAAAA;
 }
 dmodule:after {
     display: block;
@@ -45,7 +51,6 @@ dmodule:after {
     margin-top: 12pt;
     content:"- End of data module -";
 }
-
 
 infoName:before {
 	content: " - ";
@@ -74,8 +79,6 @@ content {
 process, crew, procedure, description, schedule {
 	display:block;
 }
-
-
 
 
 /* Common elements : warning, caution, para, listes */
@@ -186,77 +189,4 @@ refs > dmRef > dmRefAddressItems {
 	border-bottom: 1pt solid black;
 }
 
-
-
-/* APPLICABILITY MANAGEMENT */
-
-applic {
-    
-}
-
-/* FIXME: cas qui ne fonctionne pas = un evaluate contenant (evaluate, assert, evaluate) */
-/*
-applic > evaluate:before {
-    content:"(";
-}
-applic > evaluate:after {
-    content: ""!important;
-}
-
-evaluate > assert:first-child:before {
-    content:""!important;
-}
-evaluate > assert:before {
-    content:oxy_concat(" ", oxy_xpath("../@andOr"), " ");
-}
-
-evaluate > evaluate:first-child:before {
-    content:"("!important;
-}
-evaluate > evaluate:before {
-    content:oxy_concat(") ", oxy_xpath("../@andOr"), " (");
-}
-evaluate:last-child:after {
-    content:")";
-}
-*/
-/*
-assert:before {
-    content:"(";
-}
-evaluate:before {
-    content:"(";
-}*/
-evaluate > assert:first-child:before {
-    content:"("!important;
-}
-evaluate > assert:before {
-    content:oxy_concat(" ", oxy_xpath("../@andOr"), " (");
-}
-evaluate > evaluate:first-child:before {
-    content:"["!important;
-}
-evaluate > evaluate:before {
-    content:oxy_concat(" ", oxy_xpath("../@andOr"), " [");
-}
-
-assert:after {
-    content:")";
-}
-evaluate:after {
-    content:"]";
-}
-applic > evaluate:after {
-    content:""!important;
-}
-
-
-evaluate {
-
-}
-
-assert {
-    /* TODO traiter les deux cas  applicPropertyType="prodattr | condition" */
-    content:attr(applicPropertyIdent) '="' attr(applicPropertyValues) '"';
-}
 

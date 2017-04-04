@@ -1,0 +1,73 @@
+
+/* APPLICABILITY MANAGEMENT */
+
+applic {
+    
+}
+
+/* FIXME: cas qui ne fonctionne pas = un evaluate contenant (evaluate, assert, evaluate) */
+/*
+applic > evaluate:before {
+    content:"(";
+}
+applic > evaluate:after {
+    content: ""!important;
+}
+
+evaluate > assert:first-child:before {
+    content:""!important;
+}
+evaluate > assert:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " ");
+}
+
+evaluate > evaluate:first-child:before {
+    content:"("!important;
+}
+evaluate > evaluate:before {
+    content:oxy_concat(") ", oxy_xpath("../@andOr"), " (");
+}
+evaluate:last-child:after {
+    content:")";
+}
+*/
+/*
+assert:before {
+    content:"(";
+}
+evaluate:before {
+    content:"(";
+}*/
+evaluate > assert:first-child:before {
+    content:"("!important;
+}
+evaluate > assert:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " (");
+}
+evaluate > evaluate:first-child:before {
+    content:"["!important;
+}
+evaluate > evaluate:before {
+    content:oxy_concat(" ", oxy_xpath("../@andOr"), " [");
+}
+
+assert:after {
+    content:")";
+}
+evaluate:after {
+    content:"]";
+}
+applic > evaluate:after {
+    content:""!important;
+}
+
+
+evaluate {
+
+}
+
+assert {
+    /* TODO traiter les deux cas  applicPropertyType="prodattr | condition" */
+    content:attr(applicPropertyIdent) '="' attr(applicPropertyValues) '"';
+}
+

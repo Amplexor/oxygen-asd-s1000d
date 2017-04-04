@@ -1,0 +1,110 @@
+
+@import "rdf.css";
+@import "idstatus.css";
+
+@import "applic.css";
+
+
+
+@namespace oxy url('http://www.oxygenxml.com/extensions/author');
+
+@namespace xlink url('http://www.w3.org/1999/xlink');
+
+
+oxy|document {
+	display:block !important;
+	font-family: Arial !important; 
+}
+
+oxy|comment {
+    display: none!important;
+}
+
+/* The data module*/
+
+ddn {
+	display:block;
+	font-family: Arial !important;
+	font-size: 10pt;
+}
+
+ddn:after {
+    display: block;
+    text-align:center;
+    font-weight: bold;
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
+    margin-top: 12pt;
+    content:"- End of data dispatch note -";
+}
+
+
+/* Debut du contenu du DM */
+ddnContent:before {
+	display:block; 
+	font-weight: bold;
+	color: blue;
+	content: "Content of the DDN:";
+	margin-top: 12pt;
+}
+ddnContent {
+	display:block;
+}
+
+
+deliveryListItem:before {
+    content: url("file.png") " ";
+}
+deliveryListItem {
+    display: block;
+}
+
+dml {
+	display:block;
+	font-family: Arial !important;
+	font-size: 10pt;
+}
+
+dml:after {
+    display: block;
+    text-align:center;
+    font-weight: bold;
+    border-top: 1pt solid black;
+    border-bottom: 1pt solid black;
+    margin-top: 12pt;
+    content:"- End of data module list -";
+
+}
+/* Debut du contenu du DM */
+dmlContent:before {
+	display:block; 
+	font-weight: bold;
+	color: blue;
+	content: "Content of the DML:";
+	margin-top: 12pt;
+}
+dmlContent {
+	display:block;
+}
+
+
+dmlEntry:before {
+    content: url("file.png") " ";
+}
+dmlEntry {
+    display: block;
+    padding-left: 12pt;
+}
+
+
+
+
+
+
+
+
+
+pmEntryTitle {
+    font-weight: bold;
+    text-decoration: underline;
+}

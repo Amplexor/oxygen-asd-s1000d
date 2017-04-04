@@ -1,0 +1,73 @@
+
+contextRules:before {
+    content: "Context rules";
+    display:block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+contextRules {
+    
+}
+
+structureObjectRuleGroup {
+    
+}
+
+structureObjectRule {
+    display: block;
+    padding-bottom: 3pt;
+}
+
+objectPath:before {
+    content: oxy_combobox( 
+            edit, '@allowedObjectFlag',
+            editable, false);
+}
+
+objectPath {
+    font-family: courier, fixed, monospace;
+}
+
+objectUse {
+    
+}
+
+objectValue {
+    display: block;
+    margin-left: 40pt;
+    /*width: 40pt;*/
+}
+
+objectValue:after {
+    content: "   " oxy_combobox( 
+            edit, '@valueForm',
+            editable, false,
+            columns, 20)
+       " "
+       oxy_textfield(
+          edit, '@valueAllowed',
+          columns, 40)
+       " "
+       oxy_combobox( 
+            edit, '@valueTailoring',
+            editable, false,
+            columns, 20);
+
+}
+
+nonContextRules:before {
+    content: "Non-context rules";
+    display:block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+nonContextRules {
+    
+}
+
+nonContextRule {
+    
+}
+
+
