@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <serialized version="18.0" xml:space="preserve">
-	<map>
+	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
@@ -210,7 +210,7 @@
 												<String>result</String>
 											</field>
 											<field name="url">
-												<null/>
+												<String>${cfdu}/${cfn}.fo</String>
 											</field>
 											<field name="showInSequenceView">
 												<Boolean>true</Boolean>
@@ -219,7 +219,19 @@
 									</xprocOutputPort-array>
 								</field>
 								<field name="xprocOptions">
-									<xprocOption-array/>
+									<xprocOption-array>
+										<xprocOption>
+											<field name="namespaceURI">
+												<String></String>
+											</field>
+											<field name="localName">
+												<String>output-pdf-uri</String>
+											</field>
+											<field name="value">
+												<String>${cfdu}/${cfn}.pdf</String>
+											</field>
+										</xprocOption>
+									</xprocOption-array>
 								</field>
 								<field name="xprocParameters">
 									<xprocParameterPort-array>
@@ -374,5 +386,5 @@
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</map>
+	</serializableOrderedMap>
 </serialized>

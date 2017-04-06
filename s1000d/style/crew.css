@@ -1,0 +1,46 @@
+
+descCrew {
+    
+}
+
+crewRefCard {
+    
+}
+
+crewDrill {
+
+}
+subCrewDrill {
+    
+}
+
+crewDrillStep {
+    
+}
+challengeAndResponse {
+    display: block;
+}
+
+challenge {
+    
+}
+response:before {
+    content:" . . . . . . . . . . . . . ";
+}
+response {
+    
+}
+
+challenge > para, response > para {
+    display: inline;
+}
+
+if {
+    
+}
+caseCond {
+    
+}
+crewProcedureName {
+    
+}

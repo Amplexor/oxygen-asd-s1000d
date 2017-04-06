@@ -11,8 +11,8 @@
 @import "frontmatter.css";
 @import "comrep.css";
 
+@import "crew.css";
 @import "sb.css";
-
 
 @import "brex.css";
 
@@ -21,6 +21,8 @@
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
 
 @namespace xlink url('http://www.w3.org/1999/xlink');
+@namespace rdf url('http://www.w3.org/1999/02/22-rdf-syntax-ns#');
+@namespace dc url('http://www.purl.org/dc/elements/1.1/');
 
 
 oxy|document {

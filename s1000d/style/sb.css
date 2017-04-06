@@ -14,7 +14,7 @@ sbManagementInfo:before {
     content: counter(sbpart) ". Management Information";
     font-weight:bold;
     text-decoration: underline;
-    margin-left:-1cm;
+    margin-left:0pt;
 }
 
 sbManagementInfo {
@@ -155,7 +155,7 @@ sbPlanningInfo {
 }
 
 
-
+/* materialInfo section */
 sbMaterialInfo:before {
     display:block;
     content: counter(sbpart) ". Material Information";
@@ -169,11 +169,103 @@ sbMaterialInfo {
     counter-increment: sbpart;
     counter-reset: sbpart2;
     counter-reset: sbTopic;
-    
+    display:block;
+}
+commonInfo:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+commonInfo {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Common information";
+}
+sbMaterialSetList:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+sbMaterialSetList {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Material set list";
+}
+sbMaterialSet {
+    display:block;
+}
+sbSupportEquipsList:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+sbSupportEquipsList {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Support equipments list";
+}
+sbSupportEquipsSet {
+    display:block;
+}
+sbSuppliesList:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+sbSuppliesList {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Supplies list";
+}
+sbIndividualSupply {
+    display: block;
+}
+sbSparesList:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+sbSparesList {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Spares list";
+}
+sbSpareSet {
+    display: block;
+}
+sbRemovedSparesList:before {
+    content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+sbRemovedSparesList {
+    counter-increment: sbTopic;
+    margin-left: 1cm;
+    padding-bottom: 6pt;
+    display:block;
+    -oxy-prepend-content: "Removed spares list";
+}
+sbRemovedSpareSet {
+    display: block;
 }
 
-
-
+/* */
 
 sbAccomplishmentInstructions:before {
     display:block;
@@ -190,8 +282,6 @@ sbAccomplishmentInstructions {
     counter-reset: sbTopic;
     
 }
-
-
 
 
 sbAdditionalInfo:before {
@@ -225,6 +315,7 @@ sbTopic > *:first-child:before {
 sbTopic {
     counter-increment: sbTopic;
     margin-left: 1cm;
+    padding-bottom: 6pt;
 }
 
 sbTopicContent {
