@@ -37,11 +37,11 @@ dmAddressItems > dmTitle {
 }
 
 /* Status */
-dmStatus:before, pmStatus:before {
+dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before {
     content: "Status";
     font-weight: bold;
 }
-dmStatus, pmStatus {
+dmStatus, pmStatus, ddnStatus, dmlStatus {
 	-oxy-foldable:true;
 	-oxy-folded:true;
 	padding: 6pt;
