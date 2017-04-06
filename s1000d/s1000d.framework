@@ -9,7 +9,7 @@
 						<null/>
 					</field>
 					<field name="name">
-						<String>S1000D</String>
+						<String>S1000D Data Modules</String>
 					</field>
 					<field name="schemaDescriptor">
 						<null/>
@@ -167,7 +167,7 @@
 						</String-array>
 					</field>
 					<field name="description">
-						<String>Test customisation oXygen pour la S1000D</String>
+						<String>customisation oXygen pour la S1000D (Data Modules)</String>
 					</field>
 					<field name="doctypeRules">
 						<documentTypeRule-array>
@@ -275,7 +275,50 @@
 									<Boolean>true</Boolean>
 								</field>
 								<field name="xsltParams">
-									<list/>
+									<list>
+										<transformationParameter>
+											<field name="paramDescription">
+												<paramDescriptor>
+													<field name="localName">
+														<String>p-graphicPath</String>
+													</field>
+													<field name="prefix">
+														<null/>
+													</field>
+													<field name="namespace">
+														<null/>
+													</field>
+												</paramDescriptor>
+											</field>
+											<field name="value">
+												<String>${cfdu}</String>
+											</field>
+											<field name="hasXPathValue">
+												<Boolean>false</Boolean>
+											</field>
+										</transformationParameter>
+										<transformationParameter>
+											<field name="paramDescription">
+												<paramDescriptor>
+													<field name="localName">
+														<String>p-imagePath</String>
+													</field>
+													<field name="prefix">
+														<null/>
+													</field>
+													<field name="namespace">
+														<null/>
+													</field>
+												</paramDescriptor>
+											</field>
+											<field name="value">
+												<String>${framework}/style_xsl/pdf/s1000d_4.1_AH/image/</String>
+											</field>
+											<field name="hasXPathValue">
+												<Boolean>false</Boolean>
+											</field>
+										</transformationParameter>
+									</list>
 								</field>
 								<field name="cascadingStylesheets">
 									<String-array/>

@@ -1,0 +1,27 @@
+
+initialProvisioningProject {
+    content: "Project no. "
+      oxy_textfield(edit, '@initialProvisioningProjectNumber')
+      " subject "
+      oxy_textfield(edit, '@initialProvisioningProjectNumberSubject')
+      " file ident "
+      oxy_combobox(edit, '@fileIdent',
+            editable, false);
+}
+catalogSeqNumber {
+    font-family: courier, fixed, monospace;
+}
+catalogSeqNumber {
+    display: block;
+}
+itemSeqNumber:before {
+    content: oxy_xpath("../@item") " " attr(itemSeqNumberValue);
+}
+partRef {
+    content: "P/N "
+       oxy_textfield(
+          edit, '@partNumberValue')
+       " MFR "
+       oxy_textfield(
+          edit, '@manufacturerCodeValue');
+}
