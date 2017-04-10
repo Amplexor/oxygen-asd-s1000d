@@ -15,7 +15,7 @@ commonRepository {
 /* */
 
 functionalItemRepository:before {
-    content: "Functional itemps repository";
+    content: "Functional items repository";
     display:block;
 	font-weight: bold;
 	text-decoration: underline;
@@ -26,10 +26,32 @@ functionalItemRepository {
 }
 functionalItemSpec {
     display: block;
+    padding-bottom: 6pt;
 }
 
+functionalItemIdent:before {
+    content: attr(id);
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+
+}
 functionalItemIdent {
-    width: 40pt;
+    /*width: 40pt;*/
+    content: "Identification: "
+      " id="
+      oxy_textfield(
+          edit, '@id',
+          columns, 20)
+      " item no.="
+      oxy_textfield(
+          edit, '@functionalItemNumber',
+          columns, 20)
+      " type="
+      oxy_combobox( 
+            edit, '@functionalItemType',
+            editable, false);
+
 }
 
 
@@ -94,6 +116,16 @@ controlIndicatorRepository:before {
 controlIndicatorRepository {
     display:block;
 	padding-left: 12pt;
+}
+controlIndicatorSpec:before {
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+    content: attr(controlIndicatorNumber);
+}
+controlIndicatorSpec {
+    display: block;
+    padding-bottom: 6pt;
 }
 
 /*  */

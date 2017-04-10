@@ -41,6 +41,7 @@ dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before {
     content: "Status";
     font-weight: bold;
 }
+
 dmStatus, pmStatus, ddnStatus, dmlStatus {
 	-oxy-foldable:true;
 	-oxy-folded:true;

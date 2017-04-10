@@ -1,0 +1,52 @@
+
+/* Common elements : warning, caution, para, listes */
+
+warning {
+	display: block;
+	font-weight: bold;
+	color: red;
+}
+
+caution {
+	display: block;
+	color: red;
+}
+
+title {
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+simplePara, para {
+	display: block;
+}
+
+emphasis {
+	font-weight: bold;
+}
+
+levelledPara {
+    display: block;
+    margin-left:1cm;
+}
+
+randomList {
+	list-style: disc;
+}
+
+randomList listItem {
+	display: list-item;
+	margin-left: 1cm;
+	list-style-position: outside;
+}
+
+definitionListItem {
+    
+}
+listItemTerm {
+    font-weight: bold;
+}
+listItemDefinition {
+    padding-left: 48pt;
+}

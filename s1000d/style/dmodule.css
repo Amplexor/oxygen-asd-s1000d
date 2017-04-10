@@ -3,6 +3,8 @@
 @import "idstatus.css";
 @import "applic.css";
 @import "cals_table.css";
+@import "paras.css";
+
 
 @import "figure.css";
 @import "descript.css";
@@ -46,6 +48,7 @@ dmodule {
 	padding:12pt;
 	border: 1pt solid #AAAAAA;
 }
+
 dmodule:after {
     display: block;
     text-align:center;
@@ -61,7 +64,7 @@ infoName:before {
 }
 
 language {
-    content: "-" attr(countryIsoCode);
+    content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
 }
 
 /* Debut du contenu du DM */
@@ -82,49 +85,6 @@ content {
 /* Types de contenu (procedural, descriptif, ...) */
 process, crew, procedure, description, schedule {
 	display:block;
-}
-
-
-/* Common elements : warning, caution, para, listes */
-
-warning {
-	display: block;
-	font-weight: bold;
-	color: red;
-}
-
-caution {
-	display: block;
-	color: red;
-}
-
-title {
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
-}
-
-simplePara, para {
-	display: block;
-}
-
-emphasis {
-	font-weight: bold;
-}
-
-levelledPara {
-    display: block;
-    margin-left:1cm;
-}
-
-randomList {
-	list-style: disc;
-}
-
-randomList listItem {
-	display: list-item;
-	margin-left: 1cm;
-	list-style-position: outside;
 }
 
 

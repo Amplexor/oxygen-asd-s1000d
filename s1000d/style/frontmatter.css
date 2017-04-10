@@ -1,4 +1,56 @@
+/* Title page */
+frontMatterTitlePage:before {
+	content: "Title page";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+}
+frontMatterTitlePage {
+    display: block;
+}
 
+productIntroName {
+    font-size: 24pt;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    padding:6pt;
+}
+
+frontMatterTitlePage > dataRestrictions:before {
+    display: block;
+    content: "Data restrictions";
+    font-weight: bold;
+    text-decoration: underline; 
+}
+
+pmTitle {
+    font-size: 42pt;
+    text-align: center;
+    display: block;
+    font-weight: bold;
+    padding: 12pt;
+}
+issueDate {
+    content: "Issue date: " oxy_textfield(
+          edit, '@year')
+       "-"
+       oxy_textfield(
+          edit, '@month')
+       "-"
+       oxy_textfield(
+          edit, '@day');
+     display: block;
+}
+
+
+productAndModel {
+    display: block;
+    font-style: italic;
+}
+
+/* Table of contents */
 
 frontMatterTableOfContent:before {
 	content: "Table of Contents";
@@ -16,8 +68,54 @@ tocList {
     display: block;
     margin-left: 12pt;
 }
-
+tocEntry:before {
+    content: url('file.png');
+}
 tocEntry {
     display: block;
     margin-left: 12pt;
+}
+
+
+/* Frontmatter list */
+
+frontMatterList:before {
+	content: "Front matter list";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+ }
+    
+frontMatterList {
+    display: block;
+}
+
+frontMatterDmEntry {
+    
+}
+
+frontMatterDmEntry > dmRef:before {
+    
+}
+frontMatterDmEntry > dmRef {
+    display:inline!important;
+    font-style: italic;
+}
+frontMatterDmEntry > dmRef > dmRefIdent:before {
+    content: url('file.png') " ";
+}
+frontMatterDmEntry > dmRef > dmRefIdent {
+    display:inline!important;
+}
+frontMatterDmEntry > dmRef > dmRefIdent > dmCode {
+    display:inline!important;
+}
+frontMatterDmEntry > dmRef > dmRefAddressItems > dmTitle {
+    margin-left: 40pt;
+    font-weight: bold;
+    color: blue;
+}
+frontMatterDmEntry > dmRef > dmRefAddressItems > issueDate {
+    margin-left: 40pt;
 }
