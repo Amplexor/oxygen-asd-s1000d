@@ -86,8 +86,6 @@ content {
 	display:block;
 }
 
-
-
 pmEntry {
     display: block;
     padding-left: 12pt;
@@ -99,7 +97,26 @@ pmEntryTitle {
     margin-bottom: 6pt;
 }
 
-
+pmEntry dmRefIdent {
+    display: inline;
+    width: 10cm!important;
+    
+}
+pmEntry dmTitle {
+    display: inline;
+    width: 10cm!important;
+    font-weight: bold;
+    color: blue;
+    margin-left: 10pt;
+    margin-right: 10pt;
+}
+pmEntry dmTitle infoName:before {
+    content: " –– ";
+}
+pmEntry issueDate {
+    display: inline;
+    width: 40pt!important;
+}
 pmRef:before {
     content: url("book_link.png");
 }
