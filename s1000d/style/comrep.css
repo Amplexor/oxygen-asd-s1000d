@@ -12,7 +12,7 @@ commonRepository {
 }
 
 
-/* */
+/* Functional items */
 
 functionalItemRepository:before {
     content: "Functional items repository";
@@ -140,7 +140,7 @@ applicRepository {
 	padding-left: 12pt;
 }
 
-/*  */
+/* Warnings repository */
 warningRepository:before {
     content: "Warnings repository";
     display:block;
@@ -151,8 +151,17 @@ warningRepository {
     display:block;
 	padding-left: 12pt;
 }
+warningSpec {
+    display: block;
+}
+warningIdent:before {
+    content: attr(warningIdentNumber);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
 
-/*  */
+/* Cautions repository */
 cautionRepository:before {
     content: "Cautions repository";
     display:block;
@@ -162,4 +171,17 @@ cautionRepository:before {
 cautionRepository {
     display:block;
 	padding-left: 12pt;
+}
+cautionSpec {
+    display: block;
+}
+cautionIdent:before {
+    content: attr(cautionIdentNumber);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+warningAndCautionPara {
+    display:block;
 }

@@ -95,13 +95,16 @@ pmEntryTitle {
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 6pt;
+    display: block;
 }
 
 pmEntry dmRefIdent {
     display: inline;
     width: 10cm!important;
-    
 }
+
+   
+
 pmEntry dmTitle {
     display: inline;
     width: 10cm!important;
@@ -117,6 +120,10 @@ pmEntry issueDate {
     display: inline;
     width: 40pt!important;
 }
+pmEntry > *:last-child:after {
+    content:"";
+    display: block;
+}
 pmRef:before {
     content: url("book_link.png");
 }
@@ -124,11 +131,26 @@ pmRef:before {
 pmEntry > dmRef:before {
     content: url("page_white_link.png") " " !important;
 }
+    /* 
+      Creation of link: https://www.oxygenxml.com/doc/versions/18/ug-editorEclipse/topics/dg-link-elements.html 
+        https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-link-text.html
+    */
+pmEntry > dmRef > dmRefIdent:before {
+    content: " " url("link.png")!important;
+    /*link: "DMC-S1000DLIGHTING-AAA-D00-00-00-00AA-00NA-D_001-00_EN-US.xml";*/
+    link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+        "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
+        "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
+          ".XML";    
+}
+
+
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" 
         attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" 
-        attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" 
-        attr(infoCodeVariant) "-" attr(itemLocationCode);
+        attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode)
 }
 pmCode {
     content: attr(modelIdentCode) "-" attr(pmIssuer) "-" attr(pmNumber) "-" attr(pmVolume);

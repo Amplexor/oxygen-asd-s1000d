@@ -54,7 +54,7 @@ issueInfo {
     content : " rev. " attr(issueNumber);
 }
 security:before {
-    content :"Security information: ";
+    content :"► Security information: ";
     color: fuchsia;
     font-weight: bold;
 
@@ -69,19 +69,19 @@ copyright:before {
     display:block;
     font-weight: bold;
     color: fuchsia;
-    content: "Copyright information";
+    content: "► Copyright information";
 }
 copyright {
     display:block;
 }
 
 responsiblePartnerCompany:before {
-    content :"Responsible partner company: ";
+    content :"► Responsible partner company: ";
     color: fuchsia;
     font-weight: bold;
 }
 originator:before {
-    content :"Originator: ";
+    content :"► Originator: ";
     color: fuchsia;
     font-weight: bold;
 }
@@ -91,7 +91,7 @@ responsiblePartnerCompany, originator {
 }
 
 dmStatus > applic:before {
-    content :"Applicability: ";
+    content :"► Applicability: ";
     color: fuchsia;
     font-weight: bold;
 }
@@ -100,7 +100,7 @@ dmStatus > applic {
 }
 
 dmStatus > techStandard:before {
-    content :"Technical standard: ";
+    content :"► Technical standard: ";
     color: fuchsia;
     font-weight: bold;
 }

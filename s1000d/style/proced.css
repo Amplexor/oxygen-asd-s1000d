@@ -9,24 +9,64 @@ preliminaryRqmts {
 
 preliminaryRqmts:before {
 	content:"Preliminary requirements";
+	font-size: larger;
 	display:block;
 	font-weight: bold;
 	text-decoration: underline;
 }
 
-/* conditions */
+/* Production management data*/
+productionMaintData {
+    display: block;
+    margin-bottom: 0.5cm;
+}
+productionMaintData:before {
+	content: "Production management data";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+workAreaLocationGroup {
+    display: block;
+}
+workAreaLocationGroup > zoneRef:before {
+    content: "Zone";
+    width: 4cm;
+    font-weight: bold;
+}
+workLocation:before {
+    content: "Work location";
+    width: 4cm;
+    font-weight: bold;
+}
+workLocation {
+    display: block;
+}
+workArea {
+    
+}
+/* Required conditions */
 reqCondGroup {
     display: block;
     margin-bottom: 0.5cm;
 }
 
 reqCondGroup:before {
-	content: "Cond";
+	content: "Required conditions";
 	display:block;
 	font-weight: bold;
 	text-decoration: underline;
 }
+reqCondGroup > *:first-child:before {
+/* oxy_label documentation https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-label-function.html */
+    content: 
+    oxy_label(text, "Action/Condition", width, 10cm, color, inherit, styles, "font-weight:bold;")
+    oxy_label(text, "Data module / Technical publication", width, 6cm, color, inherit, styles, "font-weight:bold;");
+    display:block;
 
+	border-bottom: 2pt solid black;	border-top: 1pt solid black;	background-color:#CCCCCC;
+	
+}
 noConds {
 	content: "No condition.";
 	display:block;
@@ -224,7 +264,9 @@ reqSpares:before {
 	font-weight: bold;
 	text-decoration: underline;
 }
-
+spareDescr {
+    display: block;
+}
 noSpares {
 	content: "No spares.";
 	display:block;
@@ -245,7 +287,20 @@ reqSafety:before {
 	font-weight: bold;
 	text-decoration: underline;
 }
+safetyRqmts:before {
+    content: oxy_textfield(
+          edit, '@warningRefs',
+          columns, 40)
+          "  "
+          oxy_textfield(
+          edit, '@cautionRefs',
+          columns, 40);
+          
 
+}
+safetyRqmts {
+    display: block;
+}
 noSafety {
 	content: "No safety requirement.";
 	display:block;
@@ -364,4 +419,13 @@ closeRqmts:before {
 closeRqmts {
     display: block;
     -oxy-foldable:true;
+}
+
+
+/* !! reqCondGroup is also used in preliminaryRqmts */
+reqCondGroup {
+    display:block;
+}
+reqCondNoRef {
+    
 }

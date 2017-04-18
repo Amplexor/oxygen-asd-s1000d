@@ -1,10 +1,10 @@
 
+
 @import "rdf.css";
 @import "idstatus.css";
 @import "applic.css";
 @import "cals_table.css";
 @import "paras.css";
-
 
 @import "figure.css";
 @import "descript.css";
@@ -67,7 +67,20 @@ language {
     content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
 }
 
-/* Debut du contenu du DM */
+dmCode {
+    content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
+}
+
+internalRef {
+    content:attr(internalRefId);
+    color: blue;
+    text-decoration:underline;
+}
+
+
+
+/* ==== content : Debut du contenu du DM  ==== */
+/* content (refs, (referencedApplicGroup|referencedApplicGroupRef), (warningsAndCautions|warningsAndCautionsRef), <dmtype> )*/
 content:before {
 	display:block; 
 	font-weight: bold;
@@ -81,22 +94,6 @@ content {
 	counter-reset: figure;
 }
 
-
-/* Types de contenu (procedural, descriptif, ...) */
-process, crew, procedure, description, schedule {
-	display:block;
-}
-
-
-dmCode {
-    content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
-}
-
-internalRef {
-    content:attr(internalRefId);
-    color: blue;
-    text-decoration:underline;
-}
 
 /* refs */
 refs:before {
@@ -153,4 +150,35 @@ refs > dmRef > dmRefAddressItems {
 	border-bottom: 1pt solid black;
 }
 
+/* */
+warningsAndCautions, warningsAndCautionsRef {
+    padding-left: 12pt;
+    display: block;
+    padding-bottom: 6pt;
+}
+warningsAndCautions:before, warningsAndCautionsRef:before {
+    content:"Warning and cautions";
+    font-weight: bold;
+	text-decoration: underline;
+	margin-left: -12pt;
+
+}
+warningsAndCautionsRef > warningRef:before {
+    content: "Warning ";
+}
+warningsAndCautionsRef > cautionRef:before {
+    content: "Caution ";
+}
+
+warningsAndCautionsRef > warningRef, warningsAndCautionsRef > cautionRef {
+    display: block;
+}
+
+
+
+
+/* Types de contenu (procedural, descriptif, ...) */
+brex, commonRepository, process, crew, procedure, description, schedule, sb {
+	display:block;
+}
 
