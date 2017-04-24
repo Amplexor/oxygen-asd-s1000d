@@ -53,18 +53,59 @@ dmStatus, pmStatus, ddnStatus, dmlStatus {
 issueInfo {
     content : " rev. " attr(issueNumber);
 }
+
+/* Security */
 security:before {
     content :"► Security information: ";
     color: fuchsia;
     font-weight: bold;
-
 }
 security {
     display:block;
-    content: attr(securityClassification) " " attr(commercialClassification) " " attr(caveat);
+    content: "Class:" oxy_combobox( 
+            edit, '@securityClassification',
+            editable, false) " " attr(commercialClassification) " " attr(caveat);
 }
 
+/* Data restrictions */
+/*<dataRestrictions>
+    <restrictionInstructions>
+        <dataDistribution/>
+        <exportControl>
+            <exportRegistrationStmt>
+                <simplePara/>
+            </exportRegistrationStmt>
+            <exportRegistrationCode/>
+        </exportControl>
+        <dataHandling/>
+        <dataDestruction/>
+        <dataDisclosure/>
+        <supersedure/>
+    </restrictionInstructions>
+    <restrictionInfo>
+        <copyright>
+            <copyrightPara/>
+        </copyright>
+        <policyStatement/>
+        <dataConds/>
+    </restrictionInfo>
+</dataRestrictions>
+*/
+dataRestrictions:first-of-type:before {
+    display:block;
+    font-weight: bold;
+    color: fuchsia;
+    content: "► Data restrictions";
+}
+dataRestrictions {
+    display:block;
+}
 
+restrictionInstructions {
+    
+}
+
+/* Copyright information */
 copyright:before {
     display:block;
     font-weight: bold;
@@ -75,6 +116,22 @@ copyright {
     display:block;
 }
 
+/* Logo */
+logo:before {
+    display:block;
+    font-weight: bold;
+    color: fuchsia;
+    content: "► Logo";
+}
+logo {
+    display: block;
+}
+
+logo > symbol {
+    content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent))); /*oxy_url(oxy_xpath('unparsed-entity-uri(@infoEntityIdent)'));*/
+}
+
+/* RPC */
 responsiblePartnerCompany:before {
     content :"► Responsible partner company: ";
     color: fuchsia;
@@ -90,15 +147,17 @@ responsiblePartnerCompany, originator {
     -oxy-prepend-content: attr(enterpriseCode) " - ";
 }
 
-dmStatus > applic:before {
+/* Applic of the DM or PM */
+pmStatus > applic:before, dmStatus > applic:before {
     content :"► Applicability: ";
     color: fuchsia;
     font-weight: bold;
 }
-dmStatus > applic {
+pmStatus > applic, dmStatus > applic {
     display:block;
 }
 
+/* Technical standard*/
 dmStatus > techStandard:before {
     content :"► Technical standard: ";
     color: fuchsia;
@@ -108,20 +167,85 @@ dmStatus > techStandard {
     display:block;
 }
 
+
+/* Brex reference */
+pmStatus > brexDmRef:before, dmStatus > brexDmRef:before {
+    content :"► Business rules reference: ";
+    color: fuchsia;
+    font-weight: bold;
+}
 brexDmRef {
     display:block;
 }
 
+/* QA  */
+pmStatus > qualityAssurance:before, dmStatus > qualityAssurance:before {
+    content :"► QA: ";
+    color: fuchsia;
+    font-weight: bold;
+}
 qualityAssurance {
-    display:block;    
+    display:block;
+}
+qualityAssurance > unverified {
+    content: "UNVERIFIED";
+    display: block;
+    font-weight: bold;
+    color: red;
+}
+qualityAssurance > firstVerification {
+    content: "First verification: " oxy_combobox( 
+            edit, '@verificationType',
+            editable, false);
+    display: block;
+} 
+qualityAssurance > secondVerification {
+    content: "Second verification: " oxy_combobox( 
+            edit, '@verificationType',
+            editable, false);
+    display: block;
+} 
+
+/* */
+systemBreakdownCode:before {
+    content: "► System breakdown code";
+    color: fuchsia !important;
+    font-weight: bold !important;
+    display:block !important;
+}
+functionalItemCode:before {
+    content: "► Functional item code";
+    color: fuchsia !important;
+    font-weight: bold !important;
+    display:block !important;
+}
+functionalItemRef:before {
+    content: "► Functional item ref";
+    color: fuchsia !important;
+    font-weight: bold !important;
+    display:block !important;
 }
 
-systemBreakdownCode {
-    display:block;    
+systemBreakdownCode, functionalItemCode, functionalItemRef {
+    /*display:block; */
 }
 
+/* Skills */
+
+skillLevel:before {
+    content: "► Skills";
+    color: fuchsia !important;
+    font-weight: bold !important;
+    display:block !important;
+}
+skillLevel {
+    display:block; 
+}
+
+
+/* RFU */
 reasonForUpdate:first-of-type:before {
-    -oxy-prepend-content :"Reason(s) for update(s): ";
+    -oxy-prepend-content : "► Reason(s) for update(s): ";
     color: fuchsia !important;
     font-weight: bold !important;
     display:block !important;
@@ -156,4 +280,13 @@ reasonForUpdate {
     display:table-row;
 }
 */
+
+productSafety {
+    
+}
+
+/* remarks */
+remarks {
+    
+}
 

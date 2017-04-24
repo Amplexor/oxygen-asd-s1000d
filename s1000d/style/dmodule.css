@@ -1,4 +1,6 @@
-
+/* --------------------------------------------------------------- */
+/*                     DMODULE top-level CSS                       */
+/* --------------------------------------------------------------- */
 
 @import "rdf.css";
 @import "idstatus.css";
@@ -150,7 +152,8 @@ refs > dmRef > dmRefAddressItems {
 	border-bottom: 1pt solid black;
 }
 
-/* */
+
+/* WarningAndCautions */
 warningsAndCautions, warningsAndCautionsRef {
     padding-left: 12pt;
     display: block;
@@ -164,10 +167,10 @@ warningsAndCautions:before, warningsAndCautionsRef:before {
 
 }
 warningsAndCautionsRef > warningRef:before {
-    content: "Warning ";
+    content: "Warning ref: " oxy_textfield(edit, '@warningIdentNumber', columns, 10);
 }
 warningsAndCautionsRef > cautionRef:before {
-    content: "Caution ";
+    content: "Caution ref: " oxy_textfield(edit, '@cautionIdentNumber', columns, 10);
 }
 
 warningsAndCautionsRef > warningRef, warningsAndCautionsRef > cautionRef {

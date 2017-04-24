@@ -53,9 +53,46 @@ functionalItemIdent {
             editable, false);
 
 }
+/* Circuit breakers */
+circuitBreakerRepository:before {
+    content: "Circuit breaker repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+circuitBreakerRepository {
+    display:block;
+	padding-left: 12pt;
+}
 
+/* Parts */
+partRepository:before {
+    content: "Parts repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+partRepository {
+    display:block;
+	padding-left: 12pt;
+}
+partSpec {
+    display: block;
+}
+partSpec:before {
+    content: attr(id);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+partIdent {
+    content: attr(manufacturerCodeValue) " " attr(partNumberValue);
+}
+itemIdentData, procurementData, techData {
+    display: block;
+}
 
-/* */
+/* Zones */
 zoneRepository:before {
     content: "Zones repository";
     display:block;
@@ -78,13 +115,53 @@ zoneRef {
     content: attr(zoneNumber);
 }
 
+/* Access points */
 
+/* Tool */
+toolRepository:before {
+    content: "Tools repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+toolRepository {
+    display:block;
+	padding-left: 12pt;
+}
+toolSpec {
+    display: block;
+    padding-bottom: 6pt;
+}
+toolSpec:before {
+    content: attr(id);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+toolIdent {
+    content: attr(toolNumber) " " attr(manufacturerCodeValue);
+}
+toolAlts {
+    display: block;
+}
 
+/* Enterprise */
 
+/* Supplies */
+supplyRepository:before {
+    content: "Supply repository";
+    display:block;
+	font-weight: bold;
+	text-decoration: underline;
+}
+supplyRepository {
+    display:block;
+	padding-left: 12pt;
+}
 
-/*  */
+/* Supply rqmt  */
 supplyRqmtRepository:before {
-    content: "Functional physical area repository";
+    content: "Supply requirement repository";
     display:block;
 	font-weight: bold;
 	text-decoration: underline;
@@ -94,7 +171,7 @@ supplyRqmtRepository {
 	padding-left: 12pt;
 }
 
-/*  */
+/* Functional physical areas */
 functionalPhysicalAreaRepository:before {
     content: "Functional physical area repository";
     display:block;
@@ -105,8 +182,18 @@ functionalPhysicalAreaRepository {
     display:block;
 	padding-left: 12pt;
 }
+functionalPhysicalAreaSpec:before {
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+    content: attr(id);
+}
+functionalPhysicalAreaSpec {
+    display: block;
+    padding-bottom: 6pt;
+}
 
-/*  */
+/* Control indicators */
 controlIndicatorRepository:before {
     content: "Control indicators repository";
     display:block;
@@ -127,7 +214,16 @@ controlIndicatorSpec {
     display: block;
     padding-bottom: 6pt;
 }
-
+controlIndicatorKey {
+    width: 4cm;
+    font-weight: bold;
+}
+controlIndicatorName {
+    width: 6cm;
+}
+controlIndicatorDescr {
+    display: block;
+}
 /*  */
 applicRepository:before {
     content: "Applic repository";
@@ -138,6 +234,15 @@ applicRepository:before {
 applicRepository {
     display:block;
 	padding-left: 12pt;
+}
+applicSpec {
+    display: block;
+}
+applicSpecIdent:before {
+    content: attr(applicIdentValue);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 /* Warnings repository */

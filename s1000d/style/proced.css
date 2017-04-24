@@ -151,6 +151,22 @@ supportEquipDescr > identNumber {
     border-bottom: 1pt solid black;
     width: 8cm;
 }
+supportEquipDescr:first-child > toolRef:before {
+	display: table-cell;
+	content:"Identification";
+	font-weight:bold;
+	border-bottom: 2pt solid black;
+	border-top: 1pt solid black;
+	background-color:#CCCCCC;    
+}
+
+toolRef {
+    content: attr(toolNumber);
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    text-align:right;
+    width: 8cm;
+}
 
 supportEquipDescr:first-child > reqQuantity:before {
 	display: table-cell;

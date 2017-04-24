@@ -8,11 +8,23 @@ figure {
     padding: 0.5cm;
 }
 
-figure>title:before {
+figure > title:before {
     -oxy-prepend-content:"Fig. " counter(figure) " - ";
 }
 
 
 graphic {
-    content: url("graphic.jpg");
+    /* content: url("graphic.jpg");*/
+    /* Fonctionne seulement si oXygen sait afficher des CGM
+       content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent))); */
+       content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent)));
+       display: block;
+}
+
+symbol {
+    content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent)));
+}
+
+hotspot {
+    
 }

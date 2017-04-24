@@ -12,6 +12,13 @@ caution {
 	color: red;
 }
 
+note {
+	display: block;
+	color: black;
+	font-weight: bold;
+	border: 1pt solid black;
+}
+
 title {
 	display:block;
 	font-weight: bold;
