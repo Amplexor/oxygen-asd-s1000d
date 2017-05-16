@@ -17,11 +17,12 @@ dmAddress > dmIdent > dmCode:before {
     font-weight:bold;
     content:"Data module code: ";
 }
-dmAddressItems > issueDate:before {
+dmAddressItems > issueDate:before, dmlAddressItems > issueDate:before, ddnAddressItems > issueDate:before {
     font-weight:bold;
     content:"Issue date: ";
 }
-dmAddressItems > issueDate {
+
+dmAddressItems > issueDate, dmlAddressItems > issueDate, ddnAddressItems > issueDate {
     display: block;
     content: attr(day) "-" attr(month) "-" attr(year);
 }
@@ -36,7 +37,7 @@ dmAddressItems > dmTitle {
 	padding-bottom: 6pt;
 }
 
-/* Status */
+/* == Status == */
 dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before {
     content: "Status";
     font-weight: bold;
@@ -50,8 +51,11 @@ dmStatus, pmStatus, ddnStatus, dmlStatus {
 	background-color: #DCF0F8;
 }
 
-issueInfo {
-    content : " rev. " attr(issueNumber);
+sourceDmIdent {
+    /* TODO */
+}
+repositorySourceDmIdent {
+    /* TODO */
 }
 
 /* Security */
@@ -62,9 +66,9 @@ security:before {
 }
 security {
     display:block;
-    content: "Class:" oxy_combobox( 
-            edit, '@securityClassification',
-            editable, false) " " attr(commercialClassification) " " attr(caveat);
+    content: "Class:" 
+      oxy_combobox(edit, '@securityClassification', editable, false) 
+      " " attr(commercialClassification) " " attr(caveat);
 }
 
 /* Data restrictions */
@@ -100,21 +104,102 @@ dataRestrictions:first-of-type:before {
 dataRestrictions {
     display:block;
 }
-
-restrictionInstructions {
-    
+dataRestrictions > * {
+    padding-left: 12pt;
 }
 
+restrictionInstructions:before {
+    display:block;
+    font-weight: bold;
+    color: fuchsia;
+    content: "■ Restriction instructions";  
+}
+restrictionInstructions > * {
+    padding-left: 12pt;
+}
+dataDistribution:before {
+    content: "○ Data distribution";
+    display:block;
+    color: fuchsia;
+}
+exportControl:before {
+    content: "○ Export control";
+    display:block;
+    color: fuchsia;
+}
+exportControl {
+    display:block;
+}
+dataHandling:before {
+    content: "○ Data handling";
+    display:block;
+    color: fuchsia;
+}
+dataHandling {
+    display:block;
+ }
+dataDestruction:before {
+    content: "○ Data destruction";
+    display:block;
+    color: fuchsia;
+}
+dataDestruction {
+    display:block;
+ }
+dataDisclosure:before {
+    content: "○ Data disclosure";
+    display:block;
+    color: fuchsia;
+}
+dataDisclosure {
+    display:block;
+ }
+supersedure:before {
+    content: "○ Supersedure";
+    display:block;
+    color: fuchsia;
+}
+supersedure {
+    display:block;
+}
+restrictionInfo:before {
+    display:block;
+    font-weight: bold;
+    color: fuchsia;
+    content: "■ Restriction information";
+}
+restrictionInfo > * {
+    padding-left: 12pt;
+}
 /* Copyright information */
 copyright:before {
     display:block;
     font-weight: bold;
     color: fuchsia;
-    content: "► Copyright information";
+    content: "○ Copyright information";
 }
 copyright {
     display:block;
 }
+
+policyStatement:before {
+    font-weight: bold;
+    color: fuchsia;
+    content: "○ Policy statement: ";
+}
+policyStatement {
+    display: block;
+}
+dataConds:before {
+    font-weight: bold;
+    color: fuchsia;
+    content: "○ Data conditions: ";
+}
+dataConds {
+    display: block;
+}
+
+
 
 /* Logo */
 logo:before {
@@ -131,20 +216,32 @@ logo > symbol {
     content: oxy_url(oxy_unparsed-entity-uri(attr(infoEntityIdent))); /*oxy_url(oxy_xpath('unparsed-entity-uri(@infoEntityIdent)'));*/
 }
 
-/* RPC */
-responsiblePartnerCompany:before {
+/* RPC & originator */
+dmStatus > responsiblePartnerCompany:before {
     content :"► Responsible partner company: ";
     color: fuchsia;
     font-weight: bold;
 }
+
 originator:before {
     content :"► Originator: ";
     color: fuchsia;
     font-weight: bold;
 }
+
 responsiblePartnerCompany, originator {
     display:block;
     -oxy-prepend-content: attr(enterpriseCode) " - ";
+}
+
+/* Applic cross ref table reference*/
+applicCrossRefTableRef:before {
+    content :"► Applicability cross reference table: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+applicCrossRefTableRef {
+    display:block;
 }
 
 /* Applic of the DM or PM */
@@ -154,6 +251,15 @@ pmStatus > applic:before, dmStatus > applic:before {
     font-weight: bold;
 }
 pmStatus > applic, dmStatus > applic {
+    display:block;
+}
+pmStatus > applicRef:before, dmStatus > applicRef:before {
+    content :"► Applicability ref: ";
+    color: fuchsia;
+    font-weight: bold;
+}
+pmStatus > applicRef, dmStatus > applicRef {
+    content: attr(applicIdentValue);
     display:block;
 }
 

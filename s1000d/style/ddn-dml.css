@@ -1,9 +1,8 @@
 
 @import "rdf.css";
 @import "idstatus.css";
-
+@import "refs.css";
 @import "applic.css";
-
 
 
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
@@ -20,12 +19,15 @@ oxy|comment {
     display: none!important;
 }
 
-/* The data module*/
+/* DDN */
 
 ddn {
 	display:block;
 	font-family: Arial !important;
 	font-size: 10pt;
+	margin:12pt;
+	padding:12pt;
+	border: 1pt solid #AAAAAA;
 }
 
 ddn:after {
@@ -38,6 +40,12 @@ ddn:after {
     content:"- End of data dispatch note -";
 }
 
+dispatchTo {
+    display: block;
+}
+dispatchFrom {
+    display: block;
+}
 
 /* Debut du contenu du DM */
 ddnContent:before {
@@ -51,6 +59,12 @@ ddnContent {
 	display:block;
 }
 
+mediaIdent {
+    content: oxy_label(text, "Media identification: ", width, 10em, color, inherit)
+       oxy_textfield(
+          edit, '@label',
+          columns, 40);
+}
 
 deliveryListItem:before {
     content: url("file.png") " ";
@@ -59,10 +73,15 @@ deliveryListItem {
     display: block;
 }
 
+/* DML */
+
 dml {
 	display:block;
 	font-family: Arial !important;
 	font-size: 10pt;
+	margin:12pt;
+	padding:12pt;
+	border: 1pt solid #AAAAAA;
 }
 
 dml:after {

@@ -190,9 +190,58 @@ functionalPhysicalAreaSpec:before {
 }
 functionalPhysicalAreaSpec {
     display: block;
+    padding-left: 12pt;
     padding-bottom: 6pt;
 }
-
+functionalPhysicalAreaIdent {
+    content:
+       oxy_textfield(edit, '@systemDiffCode')
+       "-"
+       oxy_textfield(edit, '@systemCode')
+       "-"
+       oxy_textfield(edit, '@subSystemCode')
+       "-"
+       oxy_textfield(edit, '@subSubSystemCode')
+       "-"
+       oxy_textfield(edit, '@assyCode')
+       "-"
+       oxy_textfield(edit, '@disassyCode')
+       "-"
+       oxy_textfield(edit, '@disassyCodeVariant')
+       ;
+}
+name, shortName {
+    display: block;
+}
+functionalPhysicalAreaRefGroup:before {
+    content: "Physical area refs:";
+    display: block;
+}
+functionalPhysicalAreaRefGroup {
+    display: block;   
+}
+functionalPhysicalAreaRef:before {
+    content: url("key.png");
+    height: 12pt;
+}
+functionalPhysicalAreaRef {
+    content:
+       oxy_textfield(edit, '@systemDiffCode')
+       "-"
+       oxy_textfield(edit, '@systemCode')
+       "-"
+       oxy_textfield(edit, '@subSystemCode')
+       "-"
+       oxy_textfield(edit, '@subSubSystemCode')
+       "-"
+       oxy_textfield(edit, '@assyCode')
+       "-"
+       oxy_textfield(edit, '@disassyCode')
+       "-"
+       oxy_textfield(edit, '@disassyCodeVariant')
+       ;
+       display: block;
+}
 /* Control indicators */
 controlIndicatorRepository:before {
     content: "Control indicators repository";

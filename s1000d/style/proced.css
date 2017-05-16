@@ -99,6 +99,13 @@ reqTechInfoGroup:before {
 	text-decoration: underline;
 }
 
+reqTechInfo:before {
+    content: "} ";
+}
+reqTechInfo {
+    display: block;
+}
+
 /* -- List of support equipments -- */
 reqSupportEquips {
     display: block;

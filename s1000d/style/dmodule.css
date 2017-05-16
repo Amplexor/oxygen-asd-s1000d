@@ -79,9 +79,12 @@ internalRef {
     text-decoration:underline;
 }
 
+issueInfo {
+    content : " rev. " attr(issueNumber);
+}
 
 
-/* ==== content : Debut du contenu du DM  ==== */
+/* ==== content : Beginning of the DM  ==== */
 /* content (refs, (referencedApplicGroup|referencedApplicGroupRef), (warningsAndCautions|warningsAndCautionsRef), <dmtype> )*/
 content:before {
 	display:block; 
