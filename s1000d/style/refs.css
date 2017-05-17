@@ -11,6 +11,14 @@ dmlCode {
     content: attr(modelIdentCode) "-" attr(senderIdent) "-" attr(dmlType) "-" attr(yearOfDataIssue) "-" attr(seqNumber);
 }
 
+issueInfo {
+    content : " rev. " attr(issueNumber);
+}
+
+language {
+    content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
+}
+
 
 internalRef {
     content:attr(internalRefId);

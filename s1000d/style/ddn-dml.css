@@ -39,9 +39,18 @@ ddn:after {
     margin-top: 12pt;
     content:"- End of data dispatch note -";
 }
-
+dispatchTo:before {
+    content: "Dispatch to:";
+    display: block;
+    font-weight: bold;
+}
 dispatchTo {
     display: block;
+}
+dispatchFrom:before {
+    content: "Dispatch from:";
+    display: block;
+    font-weight: bold;
 }
 dispatchFrom {
     display: block;
