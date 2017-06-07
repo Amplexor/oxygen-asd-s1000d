@@ -1,5 +1,5 @@
 
-/* Common elements : warning, caution, para, lists */
+/* Common elements : warning, caution, para, lists, inline styles */
 
 warning {
 	display: block;
@@ -29,15 +29,13 @@ simplePara, para {
 	display: block;
 }
 
-emphasis {
-	font-weight: bold;
-}
 
 levelledPara {
     display: block;
     margin-left:1cm;
 }
 
+/* lists */
 randomList {
 	list-style: disc;
 }
@@ -57,3 +55,59 @@ listItemTerm {
 listItemDefinition {
     padding-left: 48pt;
 }
+
+/* Inline styles */
+emphasis, emphasis[emphasisType="em01"] {
+	font-weight: bold;
+}
+emphasis[emphasisType="em02"] {
+    font-weight: inherit;
+    font-style: italic;
+}
+emphasis[emphasisType="em03"] {
+    font-weight: inherit;
+    text-decoration: underline;
+}
+emphasis[emphasisType="em04"] {
+    font-weight: inherit;
+    text-decoration: overline;
+}
+emphasis[emphasisType="em05"] {
+    font-weight: inherit;
+    text-decoration: line-through;
+}
+subScript {
+    vertical-align: sub;
+    font-size: 80%;
+}
+superScript {
+    vertical-align: super;
+    font-size: 80%;
+}
+footnote::before {
+    content: "[";
+}
+footnote {
+    color: #AAAAAA;
+}
+footnote::after {
+    content: "]";
+}
+
+verbatimText {
+    /* TODO */
+}
+
+acronym {
+    /* TODO */
+}
+
+acronymText {
+    /* TODO */
+}
+indexFlag {
+    /* TODO */
+}
+
+
+

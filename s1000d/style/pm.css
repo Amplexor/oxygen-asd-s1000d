@@ -141,15 +141,18 @@ pmEntry > dmRef > dmRefIdent:before {
         oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
         "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
         "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
-          ".XML";    
+          ".XML";
 }
-
 
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" 
         attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" 
         attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode)
 }
+issueInfo {
+    content: "-" attr(issueNumber) "-" attr(inWork);
+}
+
 pmCode {
     content: attr(modelIdentCode) "-" attr(pmIssuer) "-" attr(pmNumber) "-" attr(pmVolume);
     /*  modelIdentCode="S1000DBIKE" pmIssuer="C3002" pmNumber="EPWG1" pmVolume="00" */
