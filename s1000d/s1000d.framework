@@ -158,7 +158,7 @@
 					</field>
 					<field name="templatesLocations">
 						<String-array>
-							<String>${frameworkDir}\templates\</String>
+							<String>${frameworkDir}/templates/DM</String>
 						</String-array>
 					</field>
 					<field name="xmlCatalogs">
@@ -167,7 +167,7 @@
 						</String-array>
 					</field>
 					<field name="description">
-						<String>customisation oXygen pour la S1000D (Data Modules)</String>
+						<String>oXygen framework for S1000D (Data Modules)</String>
 					</field>
 					<field name="doctypeRules">
 						<documentTypeRule-array>
@@ -206,7 +206,7 @@
 									<null/>
 								</field>
 								<field name="name">
-									<String>PDF preview standard</String>
+									<String>Standard PDF preview</String>
 								</field>
 								<field name="baseURL">
 									<String></String>
@@ -319,7 +319,7 @@
 					</field>
 					<field name="defaultTransformationScenarios">
 						<list>
-							<String>PDF preview standard</String>
+							<String>Standard PDF preview</String>
 						</list>
 					</field>
 					<field name="extensionsBundleClassName">
