@@ -123,4 +123,12 @@ parasigdata {
     /* @psdtype */
 }
 
-
+tolerance[toleranceType = 'plusorminus'] {
+    content: '+/-' attr(toleranceValue);
+}
+tolerance[toleranceType = 'plus'] {
+    content: '+' attr(toleranceValue);
+}
+tolerance[toleranceType = 'minus'] {
+    content: '-' attr(toleranceValue);
+}
