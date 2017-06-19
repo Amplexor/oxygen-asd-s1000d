@@ -25,22 +25,22 @@ title {
 	text-decoration: underline;
 }
 
-simplePara, para {
+simplePara, para, p {
 	display: block;
 }
 
-
+/* TODO to be moved in descript.css?? */
 levelledPara {
     display: block;
     margin-left:1cm;
 }
 
 /* lists */
-randomList {
+randomList, randlist {
 	list-style: disc;
 }
 
-randomList listItem {
+randomList listItem, randlist > item {
 	display: list-item;
 	margin-left: 1cm;
 	list-style-position: outside;
@@ -55,6 +55,11 @@ listItemTerm {
 listItemDefinition {
     padding-left: 48pt;
 }
+
+seqlist {
+    
+}
+
 
 /* Inline styles */
 emphasis, emphasis[emphasisType="em01"] {
@@ -109,5 +114,13 @@ indexFlag {
     /* TODO */
 }
 
+
+/* In Airbus */
+ein {
+    content: attr(einnbr);
+}
+parasigdata {
+    /* @psdtype */
+}
 
 

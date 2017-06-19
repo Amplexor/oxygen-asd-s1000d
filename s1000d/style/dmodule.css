@@ -6,6 +6,7 @@
 @import "idstatus.css";
 @import "applic.css";
 @import "cals_table.css";
+@import "refs.css";
 @import "paras.css";
 
 @import "figure.css";
@@ -40,7 +41,7 @@ oxy|comment {
     display: none!important;
 }
 
-/* The data module*/
+/* The data module */
 
 dmodule {
 	display:block;
@@ -61,10 +62,11 @@ dmodule:after {
     content:"- End of data module -";
 }
 
-infoName:before {
+infoName:before, infoname:before {
 	content: " - ";
 }
 
+/* Moved to refs.css
 language {
     content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
 }
@@ -82,6 +84,7 @@ internalRef {
 issueInfo {
     content : " rev. " attr(issueNumber);
 }
+*/
 
 
 /* ==== content : Beginning of the DM  ==== */
@@ -114,7 +117,7 @@ refs {
 	empty-cells: show;
 }
 
-refs > dmRef {
+refs > dmRef, refs > dmref {
 	display: table-row;
 }
 
@@ -184,7 +187,7 @@ warningsAndCautionsRef > warningRef, warningsAndCautionsRef > cautionRef {
 
 
 /* Types de contenu (procedural, descriptif, ...) */
-brex, commonRepository, process, crew, procedure, description, schedule, sb {
+brex, commonRepository, process, crew, procedure, description, schedule, sb, proced {
 	display:block;
 }
 

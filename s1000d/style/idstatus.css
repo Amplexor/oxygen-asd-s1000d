@@ -1,33 +1,33 @@
 /* Identification and status */
 
-identAndStatusSection:before {
+identAndStatusSection:before, idstatus:before {
 	display:block;
 	font-weight: bold;
 	color: blue;
 	content: "Identification and status:";
 }
 
-identAndStatusSection {
+identAndStatusSection, idstatus {
 	display:block;
 	-oxy-foldable:true;
 }
 
 /* dmAddress */
-dmAddress > dmIdent > dmCode:before {
+dmAddress > dmIdent > dmCode:before, dmaddres > dmc {
     font-weight:bold;
     content:"Data module code: ";
 }
-dmAddressItems > issueDate:before, dmlAddressItems > issueDate:before, ddnAddressItems > issueDate:before {
+dmAddressItems > issueDate:before, dmlAddressItems > issueDate:before, ddnAddressItems > issueDate:before, dmaddres > issdate:before {
     font-weight:bold;
     content:"Issue date: ";
 }
 
-dmAddressItems > issueDate, dmlAddressItems > issueDate, ddnAddressItems > issueDate {
+dmAddressItems > issueDate, dmlAddressItems > issueDate, ddnAddressItems > issueDate, dmaddres > issdate {
     display: block;
     content: attr(day) "-" attr(month) "-" attr(year);
 }
 
-dmAddressItems > dmTitle {
+dmAddressItems > dmTitle, dmaddres > dmtitle {
 	display: block;
 	text-align: center;
 	font-weight: bold;
@@ -38,12 +38,12 @@ dmAddressItems > dmTitle {
 }
 
 /* == Status == */
-dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before {
+dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before, status:before {
     content: "Status";
     font-weight: bold;
 }
 
-dmStatus, pmStatus, ddnStatus, dmlStatus {
+dmStatus, pmStatus, ddnStatus, dmlStatus, status {
 	-oxy-foldable:true;
 	-oxy-folded:true;
 	padding: 6pt;
@@ -95,39 +95,39 @@ security {
     </restrictionInfo>
 </dataRestrictions>
 */
-dataRestrictions:first-of-type:before {
+dataRestrictions:first-of-type:before, datarest:first-of-type:before {
     display:block;
     font-weight: bold;
     color: fuchsia;
     content: "► Data restrictions";
 }
-dataRestrictions {
+dataRestrictions, datarest {
     display:block;
 }
-dataRestrictions > * {
+dataRestrictions > *, datarest > * {
     padding-left: 12pt;
 }
 
-restrictionInstructions:before {
+restrictionInstructions:before, instruct:before {
     display:block;
     font-weight: bold;
     color: fuchsia;
     content: "■ Restriction instructions";  
 }
-restrictionInstructions > * {
+restrictionInstructions > *, instruct > * {
     padding-left: 12pt;
 }
-dataDistribution:before {
+dataDistribution:before, distrib:before {
     content: "○ Data distribution";
     display:block;
     color: fuchsia;
 }
-exportControl:before {
+exportControl:before, expcont:before {
     content: "○ Export control";
     display:block;
     color: fuchsia;
 }
-exportControl {
+exportControl, expcont {
     display:block;
 }
 dataHandling:before {
@@ -190,12 +190,12 @@ policyStatement:before {
 policyStatement {
     display: block;
 }
-dataConds:before {
+dataConds:before, datacond:before {
     font-weight: bold;
     color: fuchsia;
     content: "○ Data conditions: ";
 }
-dataConds {
+dataConds, datacond {
     display: block;
 }
 
@@ -217,19 +217,19 @@ logo > symbol {
 }
 
 /* RPC & originator */
-dmStatus > responsiblePartnerCompany:before {
+dmStatus > responsiblePartnerCompany:before, status > rpc:before {
     content :"► Responsible partner company: ";
     color: fuchsia;
     font-weight: bold;
 }
 
-originator:before {
+originator:before, orig:before {
     content :"► Originator: ";
     color: fuchsia;
     font-weight: bold;
 }
 
-responsiblePartnerCompany, originator {
+responsiblePartnerCompany, originator, rpc, orig {
     display:block;
     -oxy-prepend-content: attr(enterpriseCode) " - ";
 }
@@ -245,12 +245,12 @@ applicCrossRefTableRef {
 }
 
 /* Applic of the DM or PM */
-pmStatus > applic:before, dmStatus > applic:before {
+pmStatus > applic:before, dmStatus > applic:before, status > applic:before {
     content :"► Applicability: ";
     color: fuchsia;
     font-weight: bold;
 }
-pmStatus > applic, dmStatus > applic {
+pmStatus > applic, dmStatus > applic, status > applic {
     display:block;
 }
 pmStatus > applicRef:before, dmStatus > applicRef:before {
@@ -275,25 +275,26 @@ dmStatus > techStandard {
 
 
 /* Brex reference */
-pmStatus > brexDmRef:before, dmStatus > brexDmRef:before {
+pmStatus > brexDmRef:before, dmStatus > brexDmRef:before, status > brexref:before {
     content :"► Business rules reference: ";
     color: fuchsia;
     font-weight: bold;
 }
-brexDmRef {
+
+brexDmRef, brexref {
     display:block;
 }
 
 /* QA  */
-pmStatus > qualityAssurance:before, dmStatus > qualityAssurance:before {
+pmStatus > qualityAssurance:before, dmStatus > qualityAssurance:before, status > qa {
     content :"► QA: ";
     color: fuchsia;
     font-weight: bold;
 }
-qualityAssurance {
+qualityAssurance, qa {
     display:block;
 }
-qualityAssurance > unverified {
+qualityAssurance > unverified, qa > unverified {
     content: "UNVERIFIED";
     display: block;
     font-weight: bold;
@@ -304,14 +305,25 @@ qualityAssurance > firstVerification {
             edit, '@verificationType',
             editable, false);
     display: block;
-} 
+}
+qa > firstver {
+    content: "First verification: " oxy_combobox( 
+            edit, '@type',
+            editable, false);
+    display: block;
+}
 qualityAssurance > secondVerification {
     content: "Second verification: " oxy_combobox( 
             edit, '@verificationType',
             editable, false);
     display: block;
-} 
-
+}
+qa > secver {
+    content: "Second verification: " oxy_combobox( 
+            edit, '@type',
+            editable, false);
+    display: block;
+}
 /* */
 systemBreakdownCode:before {
     content: "► System breakdown code";
@@ -350,21 +362,21 @@ skillLevel {
 
 
 /* RFU */
-reasonForUpdate:first-of-type:before {
+reasonForUpdate:first-of-type:before, rfu:first-of-type:before {
     -oxy-prepend-content : "► Reason(s) for update(s): ";
     color: fuchsia !important;
     font-weight: bold !important;
     display:block !important;
 }
 
-reasonForUpdate > simplePara:first-child:before {
+reasonForUpdate > simplePara:first-child:before, rfu > p:first-child:before {
     -oxy-prepend-content: oxy_concat("Update ", oxy_xpath("../@id"), " / ", oxy_xpath("../@updateReasonType"));
     display:block;
     font-weight:bold;
     color:black;
 }
 
-reasonForUpdate {
+reasonForUpdate, rfu {
     display:block;
     font-weight:normal!important;
 }

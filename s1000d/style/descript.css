@@ -1,6 +1,6 @@
 
 /* raz pour tous les compteurs de niveau des descriptions */
-description {
+description, descript {
     counter-reset: levelledPara1;
     counter-reset: levelledPara2;
     counter-reset: levelledPara3;
@@ -10,30 +10,30 @@ description {
 }
 
 
-levelledPara > para {
+levelledPara > para, para0 > para, subpara1 > para, subpara2 > para, subpara3 > para, subpara4 > para, subpara5 > para {
     margin-left: 1cm;
 }
 
 /* Incrémentation de la numérotation en fonction du niveau d'imbrication + indentation */
-levelledPara > levelledPara > levelledPara > levelledPara > levelledPara {
+levelledPara > levelledPara > levelledPara > levelledPara > levelledPara > levelledPara, subpara5 {
     counter-increment: levelledPara6;
     margin-left:1cm;
 }
 
-levelledPara > levelledPara > levelledPara > levelledPara {
+levelledPara > levelledPara > levelledPara > levelledPara > levelledPara, subpara4 {
     counter-increment: levelledPara5;
     counter-reset: levelledPara6;
     margin-left:1cm;
 }
 
-levelledPara > levelledPara > levelledPara > levelledPara {
+levelledPara > levelledPara > levelledPara > levelledPara, subpara3 {
     counter-increment: levelledPara4;
     counter-reset: levelledPara5;
     counter-reset: levelledPara6;
     margin-left:1cm;
 }
 
-levelledPara > levelledPara > levelledPara {
+levelledPara > levelledPara > levelledPara, subpara2 {
     counter-increment: levelledPara3;
     counter-reset: levelledPara4;
     counter-reset: levelledPara5;
@@ -41,7 +41,7 @@ levelledPara > levelledPara > levelledPara {
     margin-left:1cm;
 }
 
-levelledPara > levelledPara {
+levelledPara > levelledPara, subpara1 {
     counter-increment: levelledPara2;
     counter-reset: levelledPara3;
     counter-reset: levelledPara4;
@@ -50,7 +50,7 @@ levelledPara > levelledPara {
     margin-left:1cm;
 }
 
-levelledPara {
+levelledPara, para0 {
     counter-increment: levelledPara1;
     counter-reset: levelledPara2;
     counter-reset: levelledPara3;
@@ -61,13 +61,22 @@ levelledPara {
 }
 
 /* Ajout de la numérotation en fonction du niveau d'imbrication */
-levelledPara > levelledPara > title:before {
+levelledPara > levelledPara > levelledPara > levelledPara > title:before, subpara3 > title:before  {
+    content: counter(levelledPara4) ". ";
+    display: inline;
+    width: 1cm;
+}levelledPara > levelledPara > levelledPara > title:before, subpara2 > title:before  {
+    content: counter(levelledPara3) ". ";
+    display: inline;
+    width: 1cm;
+}
+levelledPara > levelledPara > title:before, subpara1 > title:before  {
     content: counter(levelledPara2) ". ";
     display: inline;
     width: 1cm;
 }
 
-levelledPara > title:before {
+levelledPara > title:before, para0 > title:before  {
     content: counter(levelledPara1) ". ";
     display: inline;
     width: 1cm;
