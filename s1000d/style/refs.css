@@ -25,15 +25,23 @@ dmaddres > issno:before {
     font-weight: bold;
 }
 /* TODO process inwork attribute */
-
 issno {
+    content : " rev. " attr(issno) " inwork " attr(inwork);
+    color: red;
+}
+issno[inwork = '00'] {
     content: " rev. " attr(issno);
+    color: green;
 }
 
 issueInfo {
-    content : " rev. " attr(issueNumber);
+    content : " rev. " attr(issueNumber) " inwork " attr(inWork);
+    color: red;
 }
-
+issueInfo[inWork = '00'] {
+    content : " rev. " attr(issueNumber);
+    color: green;
+}
 
 dmaddres > language:before {
     content: "Language: " ;

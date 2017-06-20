@@ -137,7 +137,6 @@ refs > dmRef:first-child > dmRefAddressItems:before {
 	border-bottom: 2pt solid black;
 	background-color:#CCCCCC;
 }
-
 refs > dmRef:first-child > dmRefIdent {
 	border-top: 1pt solid black;
 }

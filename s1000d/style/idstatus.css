@@ -39,7 +39,9 @@ dmAddressItems > dmTitle, dmaddres > dmtitle {
 
 /* == Status == */
 dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before, status:before {
-    content: "Status";
+    content: "Status " oxy_combobox( 
+            edit, '@issueType',
+            editable, false);
     font-weight: bold;
 }
 
@@ -357,9 +359,11 @@ skillLevel:before {
     display:block !important;
 }
 skillLevel {
-    display:block; 
+    display:block;
+    content: "Skill level: " oxy_combobox( 
+            edit, '@skillLevelCode',
+            editable, false);
 }
-
 
 /* RFU */
 reasonForUpdate:first-of-type:before, rfu:first-of-type:before {
