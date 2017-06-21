@@ -1,0 +1,113 @@
+
+faultIsolationProcedure {
+    
+}
+
+fault {
+    display: block;
+    content: oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+
+faultDescr {
+    display:block;
+}
+
+isolationMainProcedure {
+    
+}
+isolationStep {
+    display: block;
+    margin-bottom: 2mm;
+    border: 1pt dotted black;
+}
+isolationStepQuestion:before {
+    content: "(Q) ";
+}
+isolationStepQuestion {
+    display: block;
+    margin-left: 1cm;
+}
+isolationStepAnswer:before {
+    content: "(A) ";
+}
+isolationStepAnswer {
+    display: block;
+    margin-left: 1cm;
+}
+yesNoAnswer {
+    
+}
+yesAnswer {
+    content: " - Yes" " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+    display: block;
+}
+noAnswer {
+    content: " - No" " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+    display:block;
+}
+listOfChoices {
+    
+}
+choice:before {
+    content: " - ";
+}
+choice {
+    display: block;
+}
+choice:after{
+    content: " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+}
+isolationProcedureEnd {
+    
+}
+isolationProcedureEnd > action:before {
+    content: " ► ";
+}
+isolationProcedureEnd > action {
+    display:block;
+}
+
+
+/* fault reporting */
+
+faultReporting {
+    
+}
+detectedFault {
+    
+}
+isolatedFault {
+    
+}
+correlatedFault {
+    
+}
+locateAndRepair {
+    
+}
+observedFault {
+    
+}
+contextAndIsolationInfo {
+    
+}
+faultContext {
+    
+}
+isolationInfo {
+    
+}
+lruItem {
+    
+}
+lru {
+    
+}

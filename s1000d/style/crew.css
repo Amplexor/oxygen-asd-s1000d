@@ -22,13 +22,14 @@ challengeAndResponse {
 }
 
 challenge {
-    
+    width: 5cm;
 }
 response:before {
-    content:" . . . . . . . . . . . . . ";
+    content:" . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . ";
+    width: 8cm;
 }
 response {
-    
+    width: 5cm;
 }
 
 challenge > para, response > para {
@@ -43,4 +44,19 @@ caseCond {
 }
 crewProcedureName {
     
+}
+
+captionBody {
+    display: table;
+    border-top: 1pt solid black;
+    border-left: 1pt solid black;
+    border-collapse: collapse;
+}
+captionRow {
+    display: table-row;
+}
+captionEntry {
+    display: table-cell;
+    border-bottom: 1pt solid black;
+    border-right: 1pt solid black;
 }
