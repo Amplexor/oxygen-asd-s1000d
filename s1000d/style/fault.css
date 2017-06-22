@@ -9,6 +9,11 @@ fault {
           edit, '@faultCode',
           columns, 20);
 }
+faultDescr:before {
+    display:block;
+    content: "Fault description";
+    font-weight: bold;
+}
 
 faultDescr {
     display:block;
@@ -84,6 +89,12 @@ faultReporting {
 detectedFault {
     
 }
+isolatedFault:before {
+    display: block;
+    content: "Isolated fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
 isolatedFault {
     
 }
@@ -93,11 +104,22 @@ correlatedFault {
 locateAndRepair {
     
 }
+observedFault:before {
+    display: block;
+    content: "Observed fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+
 observedFault {
     
 }
 contextAndIsolationInfo {
     
+}
+faultContext:before {
+    content:"Context: ";
+    font-weight: bold;
 }
 faultContext {
     

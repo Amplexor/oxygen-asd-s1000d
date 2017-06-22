@@ -19,6 +19,16 @@ note {
 	border: 1pt solid black;
 }
 
+remarks:before {
+    display: block;
+    content: "Remarks";
+    font-style: italic;
+    text-decoration: underline;
+}
+remarks {
+    display: block;
+}
+
 title {
 	display:block;
 	font-weight: bold;
