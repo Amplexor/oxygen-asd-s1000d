@@ -5,7 +5,7 @@ faultIsolationProcedure {
 
 fault {
     display: block;
-    content: oxy_textfield(
+    content: "Fault: " oxy_textfield(
           edit, '@faultCode',
           columns, 20);
 }
@@ -86,8 +86,11 @@ isolationProcedureEnd > action {
 faultReporting {
     
 }
-detectedFault {
-    
+detectedFault:before {
+    display: block;
+    content: "Detected fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
 }
 isolatedFault:before {
     display: block;
