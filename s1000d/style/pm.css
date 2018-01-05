@@ -3,6 +3,7 @@
 @import "idstatus.css";
 
 @import "applic.css";
+@import "paras.css";
 
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
 
@@ -168,4 +169,10 @@ pmRef pmTitle {
 
 issueDate {
     content: attr(year) "-" attr(month) "-" attr(day);
+}
+
+
+pmEntry:empty {
+   content: "[pmEntry content...]";
+   font-style: italic;
 }

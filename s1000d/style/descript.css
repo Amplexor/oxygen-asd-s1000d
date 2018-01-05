@@ -76,11 +76,26 @@ levelledPara > levelledPara > title:before, subpara1 > title:before  {
     width: 1cm;
 }
 
+levelledPara > levelledPara > para:first-child:before  {
+    content: counter(levelledPara2) ". ";
+    display: inline;
+    width: 1cm;
+}
 levelledPara > title:before, para0 > title:before  {
     content: counter(levelledPara1) ". ";
     display: inline;
     width: 1cm;
 }
+
+levelledPara > para:first-child:before  {
+    content: counter(levelledPara1) ". ";
+    display: inline;
+    width: 1cm;
+}
+levelledPara > para:first-child  {
+    margin-left: 0cm!important;
+}
+
 
 /*
 levelledPara > title {
