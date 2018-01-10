@@ -30,11 +30,20 @@ sbManagementInfo > * {
 
 sbCompliance:before {
     display: block;
-    content: "Compliance: " attr(sbComplianceCategory);
+    content: "Compliance: " /* attr(sbComplianceCategory) */ oxy_combobox( 
+            edit, '@sbComplianceCategory',
+            editable, false,
+            values, 'sbcc01, sbcc02, sbcc03, sbcc04',
+            labels, 'Mandatory, Recommended, Desirable, Optional');
+    
 }
 sbTaskType:before {
     display:block;
-    content: "Task type: " attr(sbTaskCategory);
+    content: "Task type: " /* /attr(sbTaskCategory)*/ oxy_combobox( 
+            edit, '@sbTaskCategory',
+            editable, false,
+            values, 'sbtc01, sbtc02, sbtc03, sbtc04, sbtc05',
+            labels, 'Modification, Inspection, Repair, Evaluation, Administrative');
 }
 
 sbProductModificationList:before {
