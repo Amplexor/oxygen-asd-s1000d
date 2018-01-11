@@ -180,8 +180,14 @@ sbMaterialInfo {
     counter-reset: sbTopic;
     display:block;
 }
-commonInfo:before {
+commonInfo:before(200) {
     content: counter(sbTopic) ". ";
+    font-weight: bold;
+    text-decoration:underline;
+    width: 1cm;
+}
+commonInfo:before(100) {
+    content: "Common information";
     font-weight: bold;
     text-decoration:underline;
     width: 1cm;
@@ -191,7 +197,7 @@ commonInfo {
     margin-left: 1cm;
     padding-bottom: 6pt;
     display:block;
-    -oxy-prepend-content: "Common information";
+    /* -oxy-prepend-content: "Common information";*/
 }
 sbMaterialSetList:before {
     content: counter(sbTopic) ". ";

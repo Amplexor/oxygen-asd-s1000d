@@ -1,18 +1,46 @@
 
 
 
-/* PRELIMINARY REQUIREMENTS (pour procedure) */
-preliminaryRqmts, prelreqs {
-    display: block;
-    -oxy-foldable:true;
-}
-
-preliminaryRqmts:before, prelreqs:before {
-	content:"Preliminary requirements";
-	font-size: larger;
+/* PROCEDURE CONTENT */
+procedure:before, proced:before {
+	content: "Procedure";
 	display:block;
 	font-weight: bold;
 	text-decoration: underline;
+    color:green;
+}
+
+procedure, proced {
+    counter-reset: procedureSection;
+    counter-reset: proceduralStep1;
+    counter-reset: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+}
+
+preliminaryRqmts:before(100), prelreqs:before(100), mainProcedure:before(100), mainfunc:before(100), closeRqmts:before(100), closereqs:before(100),
+preliminaryRqmts:before(200), prelreqs:before(200), mainProcedure:before(200), mainfunc:before(200), closeRqmts:before(200), closereqs:before(200) {
+    font-size: larger;
+    font-weight: bold;
+	text-decoration: underline;
+}
+
+preliminaryRqmts:before(200), prelreqs:before(200), mainProcedure:before(200), mainfunc:before(200), closeRqmts:before(200), closereqs:before(200) {
+    content: counter(procedureSection) ". ";
+    width: 1cm;
+}
+
+/* PRELIMINARY REQUIREMENTS (pour procedure) */
+preliminaryRqmts:before(100), prelreqs:before(100) {
+	content:"Preliminary requirements";
+}
+
+preliminaryRqmts, prelreqs {
+    counter-increment: procedureSection;
+    display: block;
+    -oxy-foldable:true;
 }
 
 /* Production management data*/
@@ -333,38 +361,30 @@ noSafety, nosafety {
 	margin-bottom: 0.5cm;
 }
 
-/* PROCEDURE CONTENT */
-procedure:before, proced:before {
-	content: "Procedure";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
-    color:green;
-}
-
-procedure, proced {
-    counter-reset: proceduralStep1;
-    counter-reset: proceduralStep2;
-    counter-reset: proceduralStep3;
-    counter-reset: proceduralStep4;
-    counter-reset: proceduralStep5;
-    counter-reset: proceduralStep6;
-}
-
+/* ******************************* */
+/*  Main content of the procedure  */
+/* ******************************* */
 mainProcedure, mainfunc {
+    counter-increment: procedureSection;
     display:block;
     -oxy-foldable: true;
 }
 
-mainProcedure:before, mainfunc:before {
+mainProcedure:before(100), mainfunc:before(100) {
 	content: "Main procedure";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
 }
 
-proceduralStep > para, step1 > para, step2 > para, step3 > para, step4 > para, step5 > para, step6 > para {
+proceduralStepAlts {
+    display: block;
+    border-left: 2pt solid red;
+}
+proceduralStepAlts > proceduralStep {
+    border-left: 2pt dotted red;
+}
+
+proceduralStep > *:not(:first-child), step1 > para, step2 > para, step3 > para, step4 > para, step5 > para, step6 > para {
     margin-left: 1cm;
+    /* color: olive;*/
 }
 
 /* Incrémentation de la numérotation en fonction du niveau d'imbrication + indentation */
@@ -441,17 +461,21 @@ proceduralStep > *:first-child:before, step1 > *:first-child:before {
     display: inline;
     width: 1cm;
 }
+/* 
+proceduralStep > * {
+    margin-left: 1cm;
+}
+ */
 
-
-/* Close-up procedure */
-closeRqmts:before, closereqs {
+/* ******************************* */
+/*       Close-up procedure        */
+/* ******************************* */
+closeRqmts:before(100), closereqs:before(100) {
 	content:"Close-up requirements";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
 }
 
 closeRqmts, closereqs {
+    counter-increment: procedureSection;
     display: block;
     -oxy-foldable:true;
 }

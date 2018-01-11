@@ -1,17 +1,35 @@
 
 /* Common elements : warning, caution, para, lists, inline styles */
 
+warning:before {
+    display: block;
+    content: "Warning:";
+    font-style: italic;
+    text-decoration: underline;
+}
 warning {
 	display: block;
 	font-weight: bold;
 	color: red;
 }
 
+caution:before {
+    display: block;
+    content: "Caution:";
+    font-style: italic;
+    text-decoration: underline;
+}
 caution {
 	display: block;
 	color: red;
 }
 
+note:before {
+    display: block;
+    content: "Note:";
+    font-style: italic;
+    text-decoration: underline;
+}
 note {
 	display: block;
 	color: black;
@@ -46,11 +64,12 @@ levelledPara {
 }
 
 /* lists */
+/* TODO management du @listItemPrefix */
 randomList, randlist {
 	list-style: disc;
 }
 
-randomList listItem, randlist > item {
+randomList > listItem, randlist > item {
 	display: list-item;
 	margin-left: 1cm;
 	list-style-position: outside;
@@ -66,10 +85,17 @@ listItemDefinition {
     padding-left: 48pt;
 }
 
-seqlist {
-    
+/* TODO générer les   */
+seqlist, sequentialList {
+    counter-reset: seqlist1;
+    display: block;
+    list-style: decimal;
 }
-
+sequentialList > listItem {
+	display: list-item;
+	margin-left: 1cm;
+	list-style-position: outside;
+}
 
 /* Inline styles */
 emphasis, emphasis[emphasisType="em01"] {
