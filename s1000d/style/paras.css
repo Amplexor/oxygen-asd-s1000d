@@ -75,17 +75,23 @@ randomList > listItem, randlist > item {
 	list-style-position: outside;
 }
 
+deflist {
+    display: block;
+}
 definitionListItem {
     
 }
-listItemTerm {
+listItemTerm, term {
     font-weight: bold;
 }
-listItemDefinition {
+listItemDefinition, def {
     padding-left: 48pt;
 }
+deflist > def, deflist > term {
+    display: block;
+}
 
-/* TODO générer les   */
+/* Listes numérotées */
 seqlist, sequentialList {
     counter-reset: seqlist1;
     display: block;

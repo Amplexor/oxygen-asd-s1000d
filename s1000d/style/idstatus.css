@@ -17,12 +17,12 @@ dmAddress > dmIdent > dmCode:before, dmaddres > dmc {
     font-weight:bold;
     content:"Data module code: ";
 }
-dmAddressItems > issueDate:before, dmlAddressItems > issueDate:before, ddnAddressItems > issueDate:before, dmaddres > issdate:before {
+dmAddressItems > issueDate:before, dmlAddressItems > issueDate:before, ddnAddressItems > issueDate:before, dmaddres > issdate:before, pmaddres > issdate:before {
     font-weight:bold;
     content:"Issue date: ";
 }
 
-dmAddressItems > issueDate, dmlAddressItems > issueDate, ddnAddressItems > issueDate, dmaddres > issdate {
+dmAddressItems > issueDate, dmlAddressItems > issueDate, ddnAddressItems > issueDate, dmaddres > issdate, pmaddres > issdate {
     display: block;
     content: attr(day) "-" attr(month) "-" attr(year);
 }
@@ -38,14 +38,18 @@ dmAddressItems > dmTitle, dmaddres > dmtitle {
 }
 
 /* == Status == */
-dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before, status:before {
+dmStatus:before, pmStatus:before, ddnStatus:before, dmlStatus:before {
     content: "Status " oxy_combobox( 
             edit, '@issueType',
             editable, false);
     font-weight: bold;
 }
+status:before, pmstatus:before {
+    content: "Status";
+    font-weight: bold;
+}
 
-dmStatus, pmStatus, ddnStatus, dmlStatus, status {
+dmStatus, pmStatus, ddnStatus, dmlStatus, status, pmstatus {
 	-oxy-foldable:true;
 	-oxy-folded:true;
 	padding: 6pt;

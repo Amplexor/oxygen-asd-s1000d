@@ -57,15 +57,15 @@ assign {
     content: "Property" 
        oxy_textfield(
           edit, '@applicPropertyIdent',
-          columns, 40)
+          columns, 20)
        " Type "
-       oxy_textfield(
+       oxy_combobox(
           edit, '@applicPropertyType',
-          columns, 40)
+          columns, 20)
        " Value"
        oxy_textfield(
           edit, '@applicPropertyValue',
-          columns, 40)
+          columns, 20)
     
     /*applicPropertyIdent="serialno" applicPropertyType="prodattr" applicPropertyValue */
 }

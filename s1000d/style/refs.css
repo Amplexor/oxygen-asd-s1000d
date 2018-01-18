@@ -26,11 +26,13 @@ dmaddres > issno:before {
 }
 /* TODO process inwork attribute */
 issno {
-    content : " rev. " attr(issno) " inwork " attr(inwork);
+    content : " rev. " attr(issno) " inwork " attr(inwork) " type " oxy_combobox( 
+            edit, '@type',
+            editable, false);
     color: red;
 }
 issno[inwork = '00'] {
-    content: " rev. " attr(issno);
+    content: " rev. " attr(issno) " / " attr(type);
     color: green;
 }
 

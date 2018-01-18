@@ -39,16 +39,16 @@ pm:after {
     content:"- End of publication module -";
 }
 
-identAndStatusSection > pmAddress > pmAddressItems {
+identAndStatusSection > pmAddress > pmAddressItems, idstatus > pmaddres {
     display: block;
     text-align: center;
 }
 
-identAndStatusSection > pmAddress > pmAddressItems > issueDate {
+identAndStatusSection > pmAddress > pmAddressItems > issueDate, idstatus > pmaddres > issdate {
     display: block;
 }
 
-identAndStatusSection > pmAddress > pmAddressItems > pmTitle {
+identAndStatusSection > pmAddress > pmAddressItems > pmTitle, idstatus > pmaddres > pmtitle {
     color: blue;
     font-size: 14pt;
     font-weight: bold;
@@ -85,19 +85,19 @@ content {
 	display:block;
 }
 
-pmEntry {
+pmEntry, pmentry {
     display: block;
     padding-left: 12pt;
 }
 
-pmEntryTitle {
+pmEntryTitle, pmentry > title {
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 6pt;
     display: block;
 }
 
-pmEntry dmRefIdent {
+pmEntry dmRefIdent, pmentry refdm {
     display: inline;
     width: 10cm!important;
 }
@@ -127,9 +127,10 @@ pmRef:before {
     content: url("book_link.png");
 }
 
-pmEntry > dmRef:before {
+pmEntry > dmRef:before, pmentry > refdm:before {
     content: url("page_white_link.png") " " !important;
 }
+
     /* 
       Creation of link: https://www.oxygenxml.com/doc/versions/18/ug-editorEclipse/topics/dg-link-elements.html 
         https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-link-text.html
@@ -154,6 +155,9 @@ issueInfo {
     content: "-" attr(issueNumber) "-" attr(inWork);
 }
 
+pmaddres > pmc {
+    display: block;
+}
 pmCode {
     content: attr(modelIdentCode) "-" attr(pmIssuer) "-" attr(pmNumber) "-" attr(pmVolume);
     /*  modelIdentCode="S1000DBIKE" pmIssuer="C3002" pmNumber="EPWG1" pmVolume="00" */
@@ -172,7 +176,7 @@ issueDate {
 }
 
 
-pmEntry:empty {
+pmEntry:empty, pmentry:empty {
    content: "[pmEntry content...]";
    font-style: italic;
 }
