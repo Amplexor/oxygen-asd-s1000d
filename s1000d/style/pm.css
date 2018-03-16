@@ -141,11 +141,30 @@ pmEntry > dmRef > dmRefIdent:before {
     link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
         oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
         oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(issueInfo) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+        "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(language) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+        "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(language):has(issueInfo) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
         "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
         "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
           ".XML";
 }
-
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" 
         attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" 

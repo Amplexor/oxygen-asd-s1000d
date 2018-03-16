@@ -102,6 +102,9 @@ noConds, noconds {
 	font-style: italic;
 	margin-bottom: 0.5cm;
 }
+reqCondNoRef {
+    display: block;    
+}
 
 /* -- List of persons -- */
 reqPersons, reqpers {

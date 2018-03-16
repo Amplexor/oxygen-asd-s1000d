@@ -61,33 +61,50 @@ levelledPara, para0 {
 }
 
 /* Ajout de la numérotation en fonction du niveau d'imbrication */
+
+/* For the fourth level */
 levelledPara > levelledPara > levelledPara > levelledPara > title:before, subpara3 > title:before  {
     content: counter(levelledPara4) ". ";
     display: inline;
     width: 1cm;
-}levelledPara > levelledPara > levelledPara > title:before, subpara2 > title:before  {
+}
+levelledPara > levelledPara > levelledPara > levelledPara > para:first-child:before, subpara3 > title:before  {
+    content: counter(levelledPara4) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+/* For the third level */
+levelledPara > levelledPara > levelledPara > title:before, subpara2 > title:before  {
     content: counter(levelledPara3) ". ";
     display: inline;
     width: 1cm;
 }
+levelledPara > levelledPara > levelledPara > para:first-child:before, subpara2 > title:before  {
+    content: counter(levelledPara3) ". ";
+    display: inline;
+    width: 1cm;
+}
+
+/* For the second level */
 levelledPara > levelledPara > title:before, subpara1 > title:before  {
     content: counter(levelledPara2) ". ";
     display: inline;
     width: 1cm;
 }
-
-levelledPara > levelledPara > para:first-child:before  {
+levelledPara > levelledPara > para:first-child:before, subpara1 > title:before  {
     content: counter(levelledPara2) ". ";
     display: inline;
     width: 1cm;
 }
+
+/* For the first level */
 levelledPara > title:before, para0 > title:before  {
     content: counter(levelledPara1) ". ";
     display: inline;
     width: 1cm;
 }
-
-levelledPara > para:first-child:before  {
+levelledPara > para:first-child:before, para0 > para:first-child:before   {
     content: counter(levelledPara1) ". ";
     display: inline;
     width: 1cm;
