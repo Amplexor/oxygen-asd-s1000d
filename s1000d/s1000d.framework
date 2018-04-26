@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="18.0" xml:space="preserve">
+<serialized version="19.1" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -17,6 +17,7 @@
 					<field name="classpath">
 						<String-array>
 							<String>${framework}/testOXygen.jar</String>
+							<String>${framework(DocBook 5)}docbook.jar</String>
 						</String-array>
 					</field>
 					<field name="parentClassLoaderID">
@@ -426,8 +427,6 @@
 											<Boolean>false</Boolean>
 										</field>
 									</action>
-
-									<!-- tables -->
 									<action>
 										<field name="id">
 											<String>insert.table</String>
@@ -462,8 +461,12 @@ exists(self::*:article)</String>
 													<field name="argValues">
 														<serializableOrderedMap>
 															<entry>
+																<String>defaultTableModel</String>
+																<String>cals</String>
+															</entry>
+															<entry>
 																<String>namespace</String>
-																<String>http://docbook.org/ns/docbook</String>
+																<String></String>
 															</entry>
 														</serializableOrderedMap>
 													</field>
@@ -475,6 +478,106 @@ exists(self::*:article)</String>
 										</field>
 										<field name="enabledInReadOnlyContext">
 											<Boolean>false</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>table.expand.colspec</String>
+										</field>
+										<field name="name">
+											<String>${i18n(table.toggle.colspec)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(table.toggle.colspec_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/Collapsed16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>1</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>.</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>-oxy-visible-colspecs</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.SetPseudoClassOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>true</Boolean>
+										</field>
+									</action>
+									<action>
+										<field name="id">
+											<String>table.collapse.colspec</String>
+										</field>
+										<field name="name">
+											<String>${i18n(table.toggle.colspec)}</String>
+										</field>
+										<field name="description">
+											<String>${i18n(table.toggle.colspec_description)}</String>
+										</field>
+										<field name="largeIconPath">
+											<String></String>
+										</field>
+										<field name="smallIconPath">
+											<String>/images/Expanded16.png</String>
+										</field>
+										<field name="accessKey">
+											<String></String>
+										</field>
+										<field name="accelerator">
+											<null/>
+										</field>
+										<field name="actionModes">
+											<actionMode-array>
+												<actionMode>
+													<field name="xpathCondition">
+														<String>1</String>
+													</field>
+													<field name="argValues">
+														<serializableOrderedMap>
+															<entry>
+																<String>elementLocation</String>
+																<String>.</String>
+															</entry>
+															<entry>
+																<String>name</String>
+																<String>-oxy-visible-colspecs</String>
+															</entry>
+														</serializableOrderedMap>
+													</field>
+													<field name="operationID">
+														<String>ro.sync.ecss.extensions.commons.operations.RemovePseudoClassOperation</String>
+													</field>
+												</actionMode>
+											</actionMode-array>
+										</field>
+										<field name="enabledInReadOnlyContext">
+											<Boolean>true</Boolean>
 										</field>
 									</action>
 									<action>
@@ -1401,9 +1504,6 @@ or oxy:current-selected-element()[self::*:row | self::*:tr | self::*:tbody  | se
 											<Boolean>false</Boolean>
 										</field>
 									</action>
-
-
-
 								</action-array>
 							</field>
 							<field name="menubarDescriptor">
@@ -1578,8 +1678,8 @@ or oxy:current-selected-element()[self::*:row | self::*:tr | self::*:tbody  | se
 											<Integer>2</Integer>
 										</field>
 										<field name="largeIconPath">
-								<null/>
-							</field>
+											<null/>
+										</field>
 										<field name="smallIconPath">
 											<null/>
 										</field>
@@ -1870,6 +1970,9 @@ or oxy:current-selected-element()[self::*:row | self::*:tr | self::*:tbody  | se
 						<null/>
 					</field>
 					<field name="customAttributeValueEditor">
+						<null/>
+					</field>
+					<field name="textModeExternalObjectInsertionHandler">
 						<null/>
 					</field>
 				</documentTypeDescriptor>
