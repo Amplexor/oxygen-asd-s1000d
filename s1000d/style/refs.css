@@ -63,6 +63,13 @@ internalRef {
     text-decoration:underline;
 }
 
+
+controlIndicatorRef {
+    content:attr(controlIndicatorNumber);
+    color: blue;
+    text-decoration:underline;
+}
+
 /* refs */
 refs:before {
 	content:"References";

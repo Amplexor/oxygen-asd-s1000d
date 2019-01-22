@@ -71,3 +71,15 @@ assert {
     content:attr(applicPropertyIdent) '="' attr(applicPropertyValues) '"';
 }
 
+
+/* display of applicRefId set on paragraphs, ... */
+
+*[applicRefId] {
+    border: 1pt solid green;
+}
+
+*[applicRefId]:after {
+    display:block;
+    text-align:right;
+    content: attr(applicRefId);
+}

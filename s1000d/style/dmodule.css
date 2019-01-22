@@ -8,6 +8,7 @@
 @import "cals_table.css";
 @import "refs.css";
 @import "paras.css";
+@import "common-revs.css";
 
 @import "figure.css";
 @import "descript.css";
@@ -74,12 +75,6 @@ language {
 
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
-}
-
-internalRef {
-    content:attr(internalRefId);
-    color: blue;
-    text-decoration:underline;
 }
 
 issueInfo {
