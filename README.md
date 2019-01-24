@@ -1,5 +1,7 @@
 # S1000D Framework for oXygenXML
 
+Provides support in oXygen for working with S100OD files (XML only).
+
 ## What is S1000D
 
 According to https://www.asd-europe.org/s1000d:
@@ -27,5 +29,11 @@ This framework currently supports S1000D 4.0 through 4.2 schemas sets.
 
 ## Warranty
 
-No warranty of any kind is provided.
+No warranty of any kind is provided. You can however open issues in GitHub to suggest fixes, evolutions, ask questions, report errors.
+
+# Copyright and licence
+
+Copyright 2018-2019 AMPLEXOR
+
+This project is licensed under [Apache License 2.0](LICENSE.txt)
 

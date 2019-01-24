@@ -1,0 +1,13 @@
+*.project
+.classpath
+*.prefs
+*/.settings/*
+**/.svn/**
+*/target/*
+*/alf_data_dev/*
+S1000D_4-1_Bike-Samples/*
+*/s2000m/*
+*/s3000l/*
+**/style_xsl/**
+schemas/
+templates/
