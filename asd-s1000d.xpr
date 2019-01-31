@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="20.1">
+    <meta>
+        <filters directoryPatterns="" filePatterns="asd-s1000d" positiveFilePatterns="" showHiddenFiles="false"/>
+        <options/>
+    </meta>
+    <projectTree name="asd-s1000d.xpr">
+        <folder name="Data modules"/>
+        <folder name="Publication modules"/>
+    </projectTree>
+</project>

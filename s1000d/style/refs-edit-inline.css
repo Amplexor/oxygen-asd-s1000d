@@ -1,0 +1,92 @@
+
+/* Specific stylesheet to allow edition of DM atts */
+
+dmc {
+    
+}
+
+avee > sdc, avee > chapnum, avee > section, avee > subject, avee > discode, avee > incode, avee > itemloc {
+    -oxy-prepend-content: "-";
+}
+
+dmCode {
+    content: 
+       oxy_textfield(edit, '@modelIdentCode', tooltip, 'Model identification code') "-" 
+       oxy_textfield(edit, '@systemDiffCode', tooltip, 'System diff code') "-" 
+       oxy_textfield(edit, '@systemCode', tooltip, 'System code', color, 'blue') "-" 
+       oxy_textfield(edit, '@subSystemCode', tooltip, 'Sub system code', color, 'blue') "-" 
+       oxy_textfield(edit, '@subSubSystemCode', tooltip, 'Sub sub system code', color, 'blue') "-" 
+       oxy_textfield(edit, '@assyCode', tooltip, 'Assembly code', color, 'blue') "-" 
+       oxy_textfield(edit, '@disassyCode', tooltip, 'Disassembly code') "-" 
+       oxy_textfield(edit, '@disassyCodeVariant', tooltip, 'Disassembly code variant') "-" 
+       oxy_textfield(edit, '@infoCode', tooltip, 'Information code') "-" 
+       oxy_textfield(edit, '@infoCodeVariant', tooltip, 'Information code variant') "-" 
+       oxy_textfield(edit, '@itemLocationCode', tooltip, 'Item location code');
+}
+
+pmCode {
+    content: 
+       oxy_textfield(edit, '@modelIdentCode', tooltip, 'Model identification code') "-" 
+       oxy_textfield(edit, '@pmIssuer', tooltip, 'Issuer') "-" 
+       oxy_textfield(edit, '@pmNumber', tooltip, 'Number') "-" 
+       oxy_textfield(edit, '@pmVolume', tooltip, 'Volume');
+}
+
+ddnCode {
+    content: 
+       oxy_textfield(edit, '@modelIdentCode') "-" 
+       oxy_textfield(edit, '@senderIdent') "-" 
+       oxy_textfield(edit, '@receiverIdent') "-" 
+       oxy_textfield(edit, '@yearOfDataIssue') "-" 
+       oxy_textfield(edit, '@seqNumber');
+}
+
+dmlCode {
+    content: 
+       oxy_textfield(edit, '@modelIdentCode') "-" 
+       oxy_textfield(edit, '@senderIdent') "-" 
+       oxy_textfield(edit, '@dmlType') "-" 
+       oxy_textfield(edit, '@yearOfDataIssue') "-" 
+       oxy_textfield(edit, '@seqNumber');
+}
+
+/* TODO process inwork attribute */
+issno {
+    content : " rev. " attr(issno) " inwork " attr(inwork);
+    color: red;
+}
+issno[inwork = '00'] {
+    content: " rev. " attr(issno);
+    color: green;
+}
+
+issueInfo {
+    content : " rev. " attr(issueNumber) " inwork " attr(inWork);
+    color: red;
+}
+issueInfo[inWork = '00'] {
+    content : " rev. " attr(issueNumber);
+    color: green;
+}
+
+dmaddres > language:before {
+    content: "Language: " ;
+    font-weight: bold;
+}
+language[language] {
+    content : oxy_combobox(
+            edit, "@language",
+            editable, false,
+            values, "en, fr");
+}
+language[languageIsoCode] {
+    content: "-" 
+      oxy_combobox(
+            edit, "@languageIsoCode",
+            editable, false,
+            values, "en, fr") "-" 
+     oxy_combobox(
+            edit, "@countryIsoCode",
+            editable, false,
+            values, "GB, US");
+}

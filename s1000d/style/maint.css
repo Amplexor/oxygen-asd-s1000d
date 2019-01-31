@@ -1,9 +1,4 @@
 
-maintPlanning {
-    display:block;
-    -oxy-foldable: true;
-}
-
 maintPlanning:before {
 	content: "Maintenance planning";
 	display:block;
@@ -11,8 +6,21 @@ maintPlanning:before {
 	text-decoration: underline;
 }
 
+maintPlanning {
+    display:block;
+    -oxy-foldable: true;
+}
 
-taskDefinition {
+maintPlanning:has(timeLimitInfo) {
+    display:table;
+    -oxy-foldable: true;
+}
+
+
+
+
+/* ---- */
+taskDefinition, taskDefinitionAlts {
     display:block;
     border: 1pt solid green;
     margin: 2pt;
@@ -21,4 +29,60 @@ taskDefinition {
 taskDescr {
     margin:2pt;
     font-style:italic;
+}
+
+/* ---- */
+
+timeLimitInfo {
+    display: table-row;
+}
+
+timeLimitInfo:first-of-type > equipGroup:before {
+    content: "Equip.";
+    display: table-cell;
+    border-bottom: 2pt solid black;
+    font-weight: bold;
+    width: 5cm;
+}
+timeLimitInfo:first-of-type > reqQuantity:before {
+    content: "Req. qty";
+    display: table-cell;
+    border-bottom: 2pt solid black;
+    font-weight: bold;
+    width: 5cm;
+}
+timeLimitInfo:first-of-type > timeLimitCategory:before {
+    content: "Lim. cat.";
+    display: table-cell;
+    border-bottom: 2pt solid black;
+    font-weight: bold;
+    width: 5cm;
+}
+timeLimitInfo:first-of-type > timeLimit:first-of-type:before {
+    content: "Time limit";
+    display: table-cell;
+    border-bottom: 2pt solid black;
+    font-weight: bold;
+    width: 5cm;
+}
+
+timeLimitInfo > * {
+    display: table-cell;
+}
+timeLimitInfo > timeLimit {
+    display: block;
+}
+timeLimitInfo > timeLimit:first-of-type {
+    display: table-cell;
+}
+
+
+
+/* ---- */
+maintAllocation {
+    
+}
+
+remarksList {
+    
 }

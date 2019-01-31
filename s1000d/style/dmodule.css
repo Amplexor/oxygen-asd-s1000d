@@ -6,7 +6,9 @@
 @import "idstatus.css";
 @import "applic.css";
 @import "cals_table.css";
+@import "refs.css";
 @import "paras.css";
+@import "common-revs.css";
 
 @import "figure.css";
 @import "descript.css";
@@ -19,8 +21,10 @@
 @import "crew.css";
 @import "sb.css";
 @import "ipd.css";
+@import "fault.css";
 
 @import "brex.css";
+@import "wiring.css";
 
 /* gestion des tableaux : reprendre ce qui est fait dans Docbook */
 
@@ -40,7 +44,7 @@ oxy|comment {
     display: none!important;
 }
 
-/* The data module*/
+/* The data module */
 
 dmodule {
 	display:block;
@@ -61,10 +65,11 @@ dmodule:after {
     content:"- End of data module -";
 }
 
-infoName:before {
+infoName:before, infoname:before {
 	content: " - ";
 }
 
+/* Moved to refs.css
 language {
     content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
 }
@@ -73,15 +78,10 @@ dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
 }
 
-internalRef {
-    content:attr(internalRefId);
-    color: blue;
-    text-decoration:underline;
-}
-
 issueInfo {
     content : " rev. " attr(issueNumber);
 }
+*/
 
 
 /* ==== content : Beginning of the DM  ==== */
@@ -114,7 +114,7 @@ refs {
 	empty-cells: show;
 }
 
-refs > dmRef {
+refs > dmRef, refs > dmref {
 	display: table-row;
 }
 
@@ -134,7 +134,6 @@ refs > dmRef:first-child > dmRefAddressItems:before {
 	border-bottom: 2pt solid black;
 	background-color:#CCCCCC;
 }
-
 refs > dmRef:first-child > dmRefIdent {
 	border-top: 1pt solid black;
 }
@@ -184,7 +183,7 @@ warningsAndCautionsRef > warningRef, warningsAndCautionsRef > cautionRef {
 
 
 /* Types de contenu (procedural, descriptif, ...) */
-brex, commonRepository, process, crew, procedure, description, schedule, sb {
+brex, commonRepository, process, crew, procedure, description, schedule, sb, proced {
 	display:block;
 }
 

@@ -1,4 +1,12 @@
 
+dmc {
+    
+}
+
+avee > sdc, avee > chapnum, avee > section, avee > subject, avee > discode, avee > incode, avee > itemloc {
+    -oxy-prepend-content: "-";
+}
+
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" attr(disassyCode) "-" attr(disassyCodeVariant) "-" attr(infoCode) "-" attr(infoCodeVariant) "-" attr(itemLocationCode);
 }
@@ -11,17 +19,53 @@ dmlCode {
     content: attr(modelIdentCode) "-" attr(senderIdent) "-" attr(dmlType) "-" attr(yearOfDataIssue) "-" attr(seqNumber);
 }
 
-issueInfo {
-    content : " rev. " attr(issueNumber);
+
+dmaddres > issno:before {
+    content: "Issue: " ;
+    font-weight: bold;
+}
+/* TODO process inwork attribute */
+issno {
+    content : " rev. " attr(issno) " inwork " attr(inwork) " type " oxy_combobox( 
+            edit, '@type',
+            editable, false);
+    color: red;
+}
+issno[inwork = '00'] {
+    content: " rev. " attr(issno) " / " attr(type);
+    color: green;
 }
 
-language {
+issueInfo {
+    content : " rev. " attr(issueNumber) " inwork " attr(inWork);
+    color: red;
+}
+issueInfo[inWork = '00'] {
+    content : " rev. " attr(issueNumber);
+    color: green;
+}
+
+dmaddres > language:before {
+    content: "Language: " ;
+    font-weight: bold;
+}
+language[language] {
+    content : attr(language);
+}
+language[languageIsoCode] {
     content: "-" attr(languageIsoCode) "-" attr(countryIsoCode);
 }
 
 
 internalRef {
     content:attr(internalRefId);
+    color: blue;
+    text-decoration:underline;
+}
+
+
+controlIndicatorRef {
+    content:attr(controlIndicatorNumber);
     color: blue;
     text-decoration:underline;
 }

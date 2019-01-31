@@ -1,18 +1,46 @@
 
 
 
-/* PRELIMINARY REQUIREMENTS (pour procedure) */
-preliminaryRqmts {
-    display: block;
-    -oxy-foldable:true;
-}
-
-preliminaryRqmts:before {
-	content:"Preliminary requirements";
-	font-size: larger;
+/* PROCEDURE CONTENT */
+procedure:before, proced:before {
+	content: "Procedure";
 	display:block;
 	font-weight: bold;
 	text-decoration: underline;
+    color:green;
+}
+
+procedure, proced {
+    counter-reset: procedureSection;
+    counter-reset: proceduralStep1;
+    counter-reset: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+}
+
+preliminaryRqmts:before(100), prelreqs:before(100), mainProcedure:before(100), mainfunc:before(100), closeRqmts:before(100), closereqs:before(100),
+preliminaryRqmts:before(200), prelreqs:before(200), mainProcedure:before(200), mainfunc:before(200), closeRqmts:before(200), closereqs:before(200) {
+    font-size: larger;
+    font-weight: bold;
+	text-decoration: underline;
+}
+
+preliminaryRqmts:before(200), prelreqs:before(200), mainProcedure:before(200), mainfunc:before(200), closeRqmts:before(200), closereqs:before(200) {
+    content: counter(procedureSection) ". ";
+    width: 1cm;
+}
+
+/* PRELIMINARY REQUIREMENTS (pour procedure) */
+preliminaryRqmts:before(100), prelreqs:before(100) {
+	content:"Preliminary requirements";
+}
+
+preliminaryRqmts, prelreqs {
+    counter-increment: procedureSection;
+    display: block;
+    -oxy-foldable:true;
 }
 
 /* Production management data*/
@@ -46,18 +74,18 @@ workArea {
     
 }
 /* Required conditions */
-reqCondGroup {
+reqCondGroup, reqconds {
     display: block;
     margin-bottom: 0.5cm;
 }
 
-reqCondGroup:before {
+reqCondGroup:before, reqconds:before {
 	content: "Required conditions";
 	display:block;
 	font-weight: bold;
 	text-decoration: underline;
 }
-reqCondGroup > *:first-child:before {
+reqCondGroup > *:first-child:before, reqconds > *:first-child:before {
 /* oxy_label documentation https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-label-function.html */
     content: 
     oxy_label(text, "Action/Condition", width, 10cm, color, inherit, styles, "font-weight:bold;")
@@ -67,21 +95,24 @@ reqCondGroup > *:first-child:before {
 	border-bottom: 2pt solid black;	border-top: 1pt solid black;	background-color:#CCCCCC;
 	
 }
-noConds {
+noConds, noconds {
 	content: "No condition.";
 	display:block;
 	margin-left: 1cm;
 	font-style: italic;
 	margin-bottom: 0.5cm;
 }
+reqCondNoRef {
+    display: block;    
+}
 
 /* -- List of persons -- */
-reqPersons {
+reqPersons, reqpers {
     display: block;
     margin-bottom: 0.5cm;
 }
 
-reqPersons:before {
+reqPersons:before, reqpers:before {
 	content: "Persons";
 	display:block;
 	font-weight: bold;
@@ -107,12 +138,12 @@ reqTechInfo {
 }
 
 /* -- List of support equipments -- */
-reqSupportEquips {
+reqSupportEquips, supequip {
     display: block;
     margin-bottom: 0.5cm;
 }
 
-reqSupportEquips:before {
+reqSupportEquips:before, supequip:before {
 	content: "Ground support equipments";
 	display:block;
 	font-weight: bold;
@@ -191,7 +222,7 @@ supportEquipDescr > reqQuantity {
     width: 3cm;
 }
 
-noSupportEquips {
+noSupportEquips, nosupeq {
 	content: "No support equipment.";
 	display:block;
 	margin-left: 1cm;
@@ -200,12 +231,12 @@ noSupportEquips {
 }
 
 /* -- Liste of Supplies -- */
-reqSupplies {
+reqSupplies, supplies {
     display: block;
     margin-bottom: 0.5cm;
 }
 
-reqSupplies:before {
+reqSupplies:before, supplies:before {
 	content: "Supplies";
 	display:block;
 	font-weight: bold;
@@ -266,7 +297,7 @@ supplyDescr > reqQuantity {
     width: 3cm;
 }
 
-noSupplies {
+noSupplies, nosupply {
 	content: "No supplies.";
 	display:block;
 	margin-left: 1cm;
@@ -276,12 +307,12 @@ noSupplies {
 
 
 /* -- List of Spares -- */
-reqSpares {
+reqSpares, spares {
     display: block;
     margin-bottom: 0.5cm;
 }
 
-reqSpares:before {
+reqSpares:before, spares:before {
 	content: "Spares";
 	display:block;
 	font-weight: bold;
@@ -290,7 +321,7 @@ reqSpares:before {
 spareDescr {
     display: block;
 }
-noSpares {
+noSpares, nospares {
 	content: "No spares.";
 	display:block;
 	margin-left: 1cm;
@@ -299,12 +330,12 @@ noSpares {
 }
 
 /* Safety  */
-reqSafety {
+reqSafety, safety {
 	display: block;
     margin-bottom: 0.5cm;
 }
 
-reqSafety:before {
+reqSafety:before, safety:before {
 	content: "Safety requirements";
 	display:block;
 	font-weight: bold;
@@ -324,7 +355,8 @@ safetyRqmts:before {
 safetyRqmts {
     display: block;
 }
-noSafety {
+
+noSafety, nosafety {
 	content: "No safety requirement.";
 	display:block;
 	margin-left: 1cm;
@@ -332,60 +364,52 @@ noSafety {
 	margin-bottom: 0.5cm;
 }
 
-/* PROCEDURE CONTENT */
-procedure:before {
-	content: "Procedure";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
-    color:green;
-}
-
-procedure {
-    counter-reset: proceduralStep1;
-    counter-reset: proceduralStep2;
-    counter-reset: proceduralStep3;
-    counter-reset: proceduralStep4;
-    counter-reset: proceduralStep5;
-    counter-reset: proceduralStep6;
-}
-
-mainProcedure {
+/* ******************************* */
+/*  Main content of the procedure  */
+/* ******************************* */
+mainProcedure, mainfunc {
+    counter-increment: procedureSection;
     display:block;
     -oxy-foldable: true;
 }
 
-mainProcedure:before {
+mainProcedure:before(100), mainfunc:before(100) {
 	content: "Main procedure";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
 }
 
-proceduralStep > para {
+proceduralStepAlts {
+    display: block;
+    border-left: 2pt solid red;
+}
+proceduralStepAlts > proceduralStep {
+    border-left: 2pt dotted red;
+}
+
+proceduralStep > *:not(:first-child), step1 > para, step2 > para, step3 > para, step4 > para, step5 > para, step6 > para {
     margin-left: 1cm;
+    /* color: olive;*/
 }
 
 /* Incrémentation de la numérotation en fonction du niveau d'imbrication + indentation */
-proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep, step6 {
     counter-increment: proceduralStep6;
     margin-left:1cm;
 }
 
-proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep, step5 {
     counter-increment: proceduralStep5;
     counter-reset: proceduralStep6;
     margin-left:1cm;
 }
 
-proceduralStep > proceduralStep > proceduralStep > proceduralStep {
+proceduralStep > proceduralStep > proceduralStep > proceduralStep, step4 {
     counter-increment: proceduralStep4;
     counter-reset: proceduralStep5;
     counter-reset: proceduralStep6;
     margin-left:1cm;
 }
 
-proceduralStep > proceduralStep > proceduralStep {
+proceduralStep > proceduralStep > proceduralStep, step3 {
     counter-increment: proceduralStep3;
     counter-reset: proceduralStep4;
     counter-reset: proceduralStep5;
@@ -393,7 +417,7 @@ proceduralStep > proceduralStep > proceduralStep {
     margin-left:1cm;
 }
 
-proceduralStep > proceduralStep {
+proceduralStep > proceduralStep, step2 {
     counter-increment: proceduralStep2;
     counter-reset: proceduralStep3;
     counter-reset: proceduralStep4;
@@ -402,7 +426,7 @@ proceduralStep > proceduralStep {
     margin-left:1cm;
 }
 
-proceduralStep {
+proceduralStep, step1 {
     counter-increment: proceduralStep1;
     counter-reset: proceduralStep2;
     counter-reset: proceduralStep3;
@@ -413,40 +437,55 @@ proceduralStep {
 }
 
 /* Ajout de la numérotation en fonction du niveau d'imbrication */
-proceduralStep > proceduralStep > proceduralStep > *:first-child:before {
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > proceduralStep > *:first-child:before, step5 > *:first-child:before {
+    content: counter(proceduralStep5) ". ";
+    display: inline;
+    width: 1cm;
+}
+proceduralStep > proceduralStep > proceduralStep > proceduralStep > *:first-child:before, step4 > *:first-child:before {
+    content: counter(proceduralStep4) ". ";
+    display: inline;
+    width: 1cm;
+}
+proceduralStep > proceduralStep > proceduralStep > *:first-child:before, step3 > *:first-child:before {
     content: counter(proceduralStep3) ". ";
     display: inline;
     width: 1cm;
 }
 
-proceduralStep > proceduralStep > *:first-child:before {
+proceduralStep > proceduralStep > *:first-child:before, step2 > *:first-child:before {
     content: counter(proceduralStep2) ". ";
     display: inline;
     width: 1cm;
 }
 
-proceduralStep > *:first-child:before {
+proceduralStep > *:first-child:before, step1 > *:first-child:before {
     content: counter(proceduralStep1) ". ";
     display: inline;
     width: 1cm;
 }
+/* 
+proceduralStep > * {
+    margin-left: 1cm;
+}
+ */
 
-
-closeRqmts:before {
+/* ******************************* */
+/*       Close-up procedure        */
+/* ******************************* */
+closeRqmts:before(100), closereqs:before(100) {
 	content:"Close-up requirements";
-	display:block;
-	font-weight: bold;
-	text-decoration: underline;
 }
 
-closeRqmts {
+closeRqmts, closereqs {
+    counter-increment: procedureSection;
     display: block;
     -oxy-foldable:true;
 }
 
 
 /* !! reqCondGroup is also used in preliminaryRqmts */
-reqCondGroup {
+reqCondGroup, reqconds {
     display:block;
 }
 reqCondNoRef {

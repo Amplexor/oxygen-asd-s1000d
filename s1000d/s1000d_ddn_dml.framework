@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="18.0" xml:space="preserve">
-	<map>
+<serialized version="20.1" xml:space="preserve">
+	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
 			<documentTypeDescriptor-array>
@@ -175,13 +175,13 @@
 									<String></String>
 								</field>
 								<field name="attributeLocalName">
-									<String>*</String>
+									<String>noNamespaceSchemaLocation</String>
 								</field>
 								<field name="attributeNamespace">
-									<String>*</String>
+									<String>http://www.w3.org/2001/XMLSchema-instance</String>
 								</field>
 								<field name="attributeValue">
-									<String>*</String>
+									<String>http://www.s1000d.org/S1000D*</String>
 								</field>
 							</documentTypeRule>
 							<documentTypeRule>
@@ -201,13 +201,13 @@
 									<String></String>
 								</field>
 								<field name="attributeLocalName">
-									<String>*</String>
+									<String>noNamespaceSchemaLocation</String>
 								</field>
 								<field name="attributeNamespace">
-									<String>*</String>
+									<String>http://www.w3.org/2001/XMLSchema-instance</String>
 								</field>
 								<field name="attributeValue">
-									<String>*</String>
+									<String>http://www.s1000d.org/S1000D*</String>
 								</field>
 							</documentTypeRule>
 						</documentTypeRule-array>
@@ -266,8 +266,11 @@
 					<field name="customAttributeValueEditor">
 						<null/>
 					</field>
+					<field name="textModeExternalObjectInsertionHandler">
+						<null/>
+					</field>
 				</documentTypeDescriptor>
 			</documentTypeDescriptor-array>
 		</entry>
-	</map>
+	</serializableOrderedMap>
 </serialized>

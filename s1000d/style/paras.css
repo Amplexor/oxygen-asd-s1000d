@@ -1,22 +1,50 @@
 
 /* Common elements : warning, caution, para, lists, inline styles */
 
+warning:before {
+    display: block;
+    content: "Warning:";
+    font-style: italic;
+    text-decoration: underline;
+}
 warning {
 	display: block;
 	font-weight: bold;
 	color: red;
 }
 
+caution:before {
+    display: block;
+    content: "Caution:";
+    font-style: italic;
+    text-decoration: underline;
+}
 caution {
 	display: block;
 	color: red;
 }
 
+note:before {
+    display: block;
+    content: "Note:";
+    font-style: italic;
+    text-decoration: underline;
+}
 note {
 	display: block;
 	color: black;
 	font-weight: bold;
 	border: 1pt solid black;
+}
+
+remarks:before {
+    display: block;
+    content: "Remarks";
+    font-style: italic;
+    text-decoration: underline;
+}
+remarks {
+    display: block;
 }
 
 title {
@@ -25,35 +53,54 @@ title {
 	text-decoration: underline;
 }
 
-simplePara, para {
+simplePara, para, p {
 	display: block;
 }
 
-
+/* TODO to be moved in descript.css?? */
 levelledPara {
     display: block;
     margin-left:1cm;
 }
 
 /* lists */
-randomList {
+/* TODO management du @listItemPrefix */
+randomList, randlist {
 	list-style: disc;
 }
 
-randomList listItem {
+randomList > listItem, randlist > item {
 	display: list-item;
 	margin-left: 1cm;
 	list-style-position: outside;
 }
 
+deflist {
+    display: block;
+}
 definitionListItem {
     
 }
-listItemTerm {
+listItemTerm, term {
     font-weight: bold;
 }
-listItemDefinition {
+listItemDefinition, def {
     padding-left: 48pt;
+}
+deflist > def, deflist > term {
+    display: block;
+}
+
+/* Listes numérotées */
+seqlist, sequentialList {
+    counter-reset: seqlist1;
+    display: block;
+    list-style: decimal;
+}
+sequentialList > listItem {
+	display: list-item;
+	margin-left: 1cm;
+	list-style-position: outside;
 }
 
 /* Inline styles */
@@ -110,4 +157,20 @@ indexFlag {
 }
 
 
+/* In Airbus */
+ein {
+    content: attr(einnbr);
+}
+parasigdata {
+    /* @psdtype */
+}
 
+tolerance[toleranceType = 'plusorminus'] {
+    content: '+/-' attr(toleranceValue);
+}
+tolerance[toleranceType = 'plus'] {
+    content: '+' attr(toleranceValue);
+}
+tolerance[toleranceType = 'minus'] {
+    content: '-' attr(toleranceValue);
+}

@@ -1,0 +1,138 @@
+
+faultIsolationProcedure {
+    
+}
+
+fault {
+    display: block;
+    content: "Fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+faultDescr:before {
+    display:block;
+    content: "Fault description";
+    font-weight: bold;
+}
+
+faultDescr {
+    display:block;
+}
+
+isolationMainProcedure {
+    
+}
+isolationStep {
+    display: block;
+    margin-bottom: 2mm;
+    border: 1pt dotted black;
+}
+isolationStepQuestion:before {
+    content: "(Q) ";
+}
+isolationStepQuestion {
+    display: block;
+    margin-left: 1cm;
+}
+isolationStepAnswer:before {
+    content: "(A) ";
+}
+isolationStepAnswer {
+    display: block;
+    margin-left: 1cm;
+}
+yesNoAnswer {
+    
+}
+yesAnswer {
+    content: " - Yes" " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+    display: block;
+}
+noAnswer {
+    content: " - No" " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+    display:block;
+}
+listOfChoices {
+    
+}
+choice:before {
+    content: " - ";
+}
+choice {
+    display: block;
+}
+choice:after{
+    content: " → " oxy_textfield(
+          edit, '@nextActionRefId',
+          columns, 20);
+}
+isolationProcedureEnd {
+    
+}
+isolationProcedureEnd > action:before {
+    content: " ► ";
+}
+isolationProcedureEnd > action {
+    display:block;
+}
+
+
+/* fault reporting */
+
+faultReporting {
+    
+}
+detectedFault:before {
+    display: block;
+    content: "Detected fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+isolatedFault:before {
+    display: block;
+    content: "Isolated fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+isolatedFault {
+    
+}
+correlatedFault {
+    
+}
+locateAndRepair {
+    
+}
+observedFault:before {
+    display: block;
+    content: "Observed fault: " oxy_textfield(
+          edit, '@faultCode',
+          columns, 20);
+}
+
+observedFault {
+    
+}
+contextAndIsolationInfo {
+    
+}
+faultContext:before {
+    content:"Context: ";
+    font-weight: bold;
+}
+faultContext {
+    
+}
+isolationInfo {
+    
+}
+lruItem {
+    
+}
+lru {
+    
+}

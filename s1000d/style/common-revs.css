@@ -1,0 +1,17 @@
+
+/* REVISIONS MANAGEMENT */
+
+
+*[changeType='add'] {
+    font-style: italic;
+    color: green;
+}
+
+*[changeType='delete'] {
+    text-decoration: line-through;
+}
+
+*[changeType='modify'] {
+    font-style: italic;
+    color: green;
+}

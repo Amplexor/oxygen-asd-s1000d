@@ -139,8 +139,17 @@ toolSpec:before {
     text-decoration: underline;
 }
 toolIdent {
-    content: attr(toolNumber) " " attr(manufacturerCodeValue);
+    content: 
+      "Number: "
+      oxy_textfield(
+          edit, '@toolNumber',
+          columns, 5)
+      " ; MFR: "
+      oxy_textfield(
+          edit, '@manufacturerCodeValue',
+          columns, 10);
 }
+
 toolAlts {
     display: block;
 }
@@ -157,6 +166,34 @@ supplyRepository:before {
 supplyRepository {
     display:block;
 	padding-left: 12pt;
+}
+
+supplySpec {
+    display: block;
+    padding-bottom: 6pt;
+}
+supplySpec:before {
+    content: attr(id);
+    display: block;
+    font-weight: bold;
+    text-decoration: underline;
+}
+supplyIdent {
+    content: 
+      "Type: " 
+      oxy_combobox( 
+            edit, '@supplyNumberType',
+            editable, false,
+            values, 'sp01, sp02, sp03, sp04, sp05',
+            labels, 'Commercial reference, Specification, Mixture, Set, Article') 
+      "; Number: "
+      oxy_textfield(
+          edit, '@supplyNumber',
+          columns, 40);
+
+}
+supplySetGroup {
+    display: block;
 }
 
 /* Supply rqmt  */

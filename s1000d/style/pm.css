@@ -3,6 +3,7 @@
 @import "idstatus.css";
 
 @import "applic.css";
+@import "paras.css";
 
 @namespace oxy url('http://www.oxygenxml.com/extensions/author');
 
@@ -38,16 +39,16 @@ pm:after {
     content:"- End of publication module -";
 }
 
-identAndStatusSection > pmAddress > pmAddressItems {
+identAndStatusSection > pmAddress > pmAddressItems, idstatus > pmaddres {
     display: block;
     text-align: center;
 }
 
-identAndStatusSection > pmAddress > pmAddressItems > issueDate {
+identAndStatusSection > pmAddress > pmAddressItems > issueDate, idstatus > pmaddres > issdate {
     display: block;
 }
 
-identAndStatusSection > pmAddress > pmAddressItems > pmTitle {
+identAndStatusSection > pmAddress > pmAddressItems > pmTitle, idstatus > pmaddres > pmtitle {
     color: blue;
     font-size: 14pt;
     font-weight: bold;
@@ -84,19 +85,19 @@ content {
 	display:block;
 }
 
-pmEntry {
+pmEntry, pmentry {
     display: block;
     padding-left: 12pt;
 }
 
-pmEntryTitle {
+pmEntryTitle, pmentry > title {
     font-weight: bold;
     text-decoration: underline;
     margin-bottom: 6pt;
     display: block;
 }
 
-pmEntry dmRefIdent {
+pmEntry dmRefIdent, pmentry refdm {
     display: inline;
     width: 10cm!important;
 }
@@ -126,9 +127,10 @@ pmRef:before {
     content: url("book_link.png");
 }
 
-pmEntry > dmRef:before {
+pmEntry > dmRef:before, pmentry > refdm:before {
     content: url("page_white_link.png") " " !important;
 }
+
     /* 
       Creation of link: https://www.oxygenxml.com/doc/versions/18/ug-editorEclipse/topics/dg-link-elements.html 
         https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-link-text.html
@@ -139,11 +141,30 @@ pmEntry > dmRef > dmRefIdent:before {
     link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
         oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
         oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(issueInfo) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+        "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(language) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
+        "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
+          ".XML";
+}
+pmEntry > dmRef > dmRefIdent:has(language):has(issueInfo) {
+   link: "DMC-" oxy_xpath("dmCode/@modelIdentCode") "-" oxy_xpath("dmCode/@systemDiffCode") "-" oxy_xpath("dmCode/@systemCode") "-" 
+        oxy_xpath("dmCode/@subSystemCode") oxy_xpath("dmCode/@subSubSystemCode") "-" oxy_xpath("dmCode/@assyCode") "-" 
+        oxy_xpath("dmCode/@disassyCode") oxy_xpath("dmCode/@disassyCodeVariant") "-" oxy_xpath("dmCode/@infoCode") oxy_xpath("dmCode/@infoCodeVariant") "-" oxy_xpath("dmCode/@itemLocationCode")
         "_" oxy_xpath("issueInfo/@issueNumber") "-" oxy_xpath("issueInfo/@inWork")
         "_" oxy_xpath("language/@languageIsoCode") "-" oxy_xpath("language/@countryIsoCode")
           ".XML";
 }
-
 dmCode {
     content: attr(modelIdentCode) "-" attr(systemDiffCode) "-" attr(systemCode) "-" 
         attr(subSystemCode) "-" attr(subSubSystemCode) "-" attr(assyCode) "-" 
@@ -153,6 +174,9 @@ issueInfo {
     content: "-" attr(issueNumber) "-" attr(inWork);
 }
 
+pmaddres > pmc {
+    display: block;
+}
 pmCode {
     content: attr(modelIdentCode) "-" attr(pmIssuer) "-" attr(pmNumber) "-" attr(pmVolume);
     /*  modelIdentCode="S1000DBIKE" pmIssuer="C3002" pmNumber="EPWG1" pmVolume="00" */
@@ -168,4 +192,10 @@ pmRef pmTitle {
 
 issueDate {
     content: attr(year) "-" attr(month) "-" attr(day);
+}
+
+
+pmEntry:empty, pmentry:empty {
+   content: "[pmEntry content...]";
+   font-style: italic;
 }
