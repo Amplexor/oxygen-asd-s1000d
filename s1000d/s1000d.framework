@@ -72,52 +72,6 @@
 								<action-array>
 									<action>
 										<field name="id">
-											<String>insert_tool</String>
-										</field>
-										<field name="name">
-											<String>insert_tool</String>
-										</field>
-										<field name="description">
-											<String>Insert a tool from common repository</String>
-										</field>
-										<field name="largeIconPath">
-											<String>${framework}/uiicons/20x20/toolbox.png</String>
-										</field>
-										<field name="smallIconPath">
-											<String>${framework}/uiicons/16x16/toolbox.png</String>
-										</field>
-										<field name="accessKey">
-											<String></String>
-										</field>
-										<field name="accelerator">
-											<null/>
-										</field>
-										<field name="actionModes">
-											<actionMode-array>
-												<actionMode>
-													<field name="xpathCondition">
-														<String>true()</String>
-													</field>
-													<field name="argValues">
-														<serializableOrderedMap>
-															<entry>
-																<String>fragment</String>
-																<String>&lt;tool/></String>
-															</entry>
-														</serializableOrderedMap>
-													</field>
-													<field name="operationID">
-														<String>com.amplexor.tpe.InsertTool</String>
-													</field>
-												</actionMode>
-											</actionMode-array>
-										</field>
-										<field name="enabledInReadOnlyContext">
-											<Boolean>false</Boolean>
-										</field>
-									</action>
-									<action>
-										<field name="id">
 											<String>subscript</String>
 										</field>
 										<field name="name">
@@ -1530,11 +1484,6 @@ or oxy:current-selected-element()[self::*:row | self::*:tr | self::*:tbody  | se
 									</field>
 									<field name="menuEntriesDescriptorList">
 										<menuEntry-array>
-											<menuItem>
-												<field name="actionID">
-													<String>insert_tool</String>
-												</field>
-											</menuItem>
 											<menu>
 												<field name="label">
 													<String>${i18n(table)}</String>
@@ -1633,11 +1582,6 @@ or oxy:current-selected-element()[self::*:row | self::*:tr | self::*:tbody  | se
 									</field>
 									<field name="toolbarEntriesDescriptorList">
 										<toolbarEntry-array>
-											<toolbarItem>
-												<field name="actionID">
-													<String>insert_tool</String>
-												</field>
-											</toolbarItem>
 											<toolbarSeparator/>
 											<toolbarItem>
 												<field name="actionID">
