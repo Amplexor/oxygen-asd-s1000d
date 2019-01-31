@@ -1,0 +1,14 @@
+/*  The main section of a wiring fields data module */
+descrWire, descrHarness, descrElectricalEquip, descrStandardPartGroup {
+    display: block;
+}
+
+descrWire > *:before, descrHarness > *:before, descrElectricalEquip > *:before {
+    display:block;
+    font-weight: bold;
+    text-decoration: underline;
+    content: oxy_xpath("name()");
+}
+descrWire > *, descrHarness > *, descrElectricalEquip > * {
+    display:block;
+}
