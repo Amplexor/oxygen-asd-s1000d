@@ -4,7 +4,8 @@
         <filters directoryPatterns="" filePatterns="asd-s1000d" positiveFilePatterns="" showHiddenFiles="false"/>
         <options/>
     </meta>
-    <projectTree name="asd-s1000d">
-        <folder path="."/>
+    <projectTree name="asd-s1000d.xpr">
+        <folder name="Data modules"/>
+        <folder name="Publication modules"/>
     </projectTree>
 </project>
