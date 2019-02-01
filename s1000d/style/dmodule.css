@@ -97,6 +97,7 @@ content:before {
 content {
 	display:block;
 	counter-reset: figure;
+	counter-reset: table;
 }
 
 
@@ -183,7 +184,7 @@ warningsAndCautionsRef > warningRef, warningsAndCautionsRef > cautionRef {
 
 
 /* Types de contenu (procedural, descriptif, ...) */
-brex, commonRepository, process, crew, procedure, description, schedule, sb, proced {
+brex, commonRepository, crew, frontMatter, illustratedPartsCatalog, proced, procedure, process, description, schedule, sb, wiringData, wiringFields {
 	display:block;
 }
 
