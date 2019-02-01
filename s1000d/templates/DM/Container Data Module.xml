@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dc="http://www.purl.org/dc/elements/1.1/"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    xsi:noNamespaceSchemaLocation="http://www.s1000d.org/S1000D_4-1/xml_schema_flat/container.xsd">
+    <rdf:Description>
+        <dc:title>{{title}}</dc:title>
+        <dc:creator>{{creator}}</dc:creator>
+        <dc:subject>{{subject}}</dc:subject>
+        <dc:publisher>{{publisher}}</dc:publisher>
+        <dc:contributor>{{contributor}}</dc:contributor>
+        <dc:date>{{date}}</dc:date>
+        <dc:type>text</dc:type>
+        <dc:format>text/xml</dc:format>
+        <dc:identifier>{{}}</dc:identifier>
+        <dc:language>en-US</dc:language>
+        <dc:rights>{{rights}}</dc:rights>
+    </rdf:Description>
+    <identAndStatusSection>
+        <dmAddress>
+            <dmIdent>
+                <dmCode modelIdentCode="" systemDiffCode="" systemCode="" subSystemCode=""
+                    subSubSystemCode="" assyCode="" disassyCode="" disassyCodeVariant="" infoCode=""
+                    infoCodeVariant="" itemLocationCode=""/>
+                <language languageIsoCode="" countryIsoCode=""/>
+                <issueInfo issueNumber="" inWork=""/>
+            </dmIdent>
+            <dmAddressItems>
+                <issueDate year="" month="" day=""/>
+                <dmTitle>
+                    <techName/>
+                </dmTitle>
+            </dmAddressItems>
+        </dmAddress>
+        <dmStatus>
+            <security securityClassification=""/>
+            <responsiblePartnerCompany/>
+            <originator/>
+            <brexDmRef>
+                <dmRef>
+                    <dmRefIdent>
+                        <dmCode modelIdentCode="" systemDiffCode="" systemCode="" subSystemCode=""
+                            subSubSystemCode="" assyCode="" disassyCode="" disassyCodeVariant=""
+                            infoCode="" infoCodeVariant="" itemLocationCode=""/>
+                    </dmRefIdent>
+                </dmRef>
+            </brexDmRef>
+            <qualityAssurance/>
+        </dmStatus>
+    </identAndStatusSection>
+    <content>
+        <container>
+            <refs></refs>
+        </container>
+    </content>
+</dmodule>
