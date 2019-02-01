@@ -124,7 +124,7 @@
 											<String>Superscript</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Superscript</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text superscript.png</String>
@@ -170,7 +170,7 @@
 											<String>bold</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Bold</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text bold.png</String>
@@ -216,7 +216,7 @@
 											<String>Italic</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Italic</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text italic.png</String>
@@ -262,7 +262,7 @@
 											<String>Underline</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Underline</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text underline.png</String>
@@ -308,13 +308,13 @@
 											<String>Overline</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Overline</String>
 										</field>
 										<field name="largeIconPath">
-											<String>${framework}/uiicons/bulot.jpg</String>
+											<String>${framework}/uiicons/text overline.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>${framework}/uiicons/bulot.jpg</String>
+											<String>${framework}/uiicons/text overline.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
@@ -354,13 +354,13 @@
 											<String>Strike</String>
 										</field>
 										<field name="description">
-											<String></String>
+											<String>Strikethrough</String>
 										</field>
 										<field name="largeIconPath">
-											<String>${framework}/uiicons/text strikethroungh.png</String>
+											<String>${framework}/uiicons/text strikethrough.png</String>
 										</field>
 										<field name="smallIconPath">
-											<String>${framework}/uiicons/text strikethroungh.png</String>
+											<String>${framework}/uiicons/text strikethrough.png</String>
 										</field>
 										<field name="accessKey">
 											<String></String>
