@@ -26,5 +26,13 @@ symbol {
 }
 
 hotspot {
-    
+    display:block;
+    content: url('hotspot.png') " Id: " oxy_textfield(edit, '@id', columns, 15)
+       " APSID: " oxy_textfield(edit, '@applicationStructureIdent', columns, 10)
+       " APSNAME: " oxy_textfield(edit, '@applicationStructureName', columns, 5)
+       " type: " oxy_textfield(edit, '@hotspotType', columns, 10)
+       " Title: " oxy_textfield(edit, '@hotspotTitle', columns, 10)
+       " Descript: " oxy_textfield(edit, '@objectDescr', columns, 10)
+          ;
+
 }
