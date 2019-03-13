@@ -53,6 +53,13 @@ title {
 	text-decoration: underline;
 }
 
+table {
+    counter-increment: table;
+}
+table > title:before(200) {
+    content : "Table " counter(table) " - "; 
+}
+
 simplePara, para, p {
 	display: block;
 }

@@ -1,0 +1,108 @@
+
+
+
+/* PROCESS CONTENT */
+process:before {
+	content: "Process";
+	display:block;
+	font-weight: bold;
+	text-decoration: underline;
+    color:green;
+}
+
+procedure, proced {
+    counter-reset: procedureSection;
+    counter-reset: proceduralStep1;
+    counter-reset: proceduralStep2;
+    counter-reset: proceduralStep3;
+    counter-reset: proceduralStep4;
+    counter-reset: proceduralStep5;
+    counter-reset: proceduralStep6;
+}
+
+
+variableDeclarations, variablePreSet, variablePostSet {
+    display: block;
+}
+
+variableDeclarations:before {
+    content: "Variable declarations";
+}
+variable:before {
+    content : "Name: " oxy_textfield(
+          edit, '@variableName',
+          columns, 40) 
+          " type: " oxy_combobox( 
+            edit, '@valueType',
+            editable, false);
+
+
+}
+variable {
+    display: block;
+}
+
+variableRef {
+    content: oxy_textfield(
+          edit, '@variableName',
+          columns, 20);
+}
+initialize {
+    display: block;
+    padding-left: 1cm;
+}
+/* 
+expression :not(expression) {
+    display:inline !important;
+}*/
+expression:has(expression) {
+    display: block;
+    border-left: 1pt solid red;
+}
+
+numberOperator {
+    
+}
+
+booleanOperator {
+    content: oxy_combobox( 
+            edit, '@booleanOperation',
+            editable, false,
+            values, 'equal, and, or, notEqual, exclusiveOr',
+            labels, '=, &&, ||, !=, XOR');
+}
+
+falseValue {
+    content: "FALSE";
+    font-weight: bold;
+}
+trueValue {
+    content: "TRUE";
+    font-weight: bold;
+}
+
+
+dmSeq, dmSeqAlts, dmNode, dmIf, dmThenSeq, dmLoop {
+    display: block;
+}
+
+dmIf:before {
+    content: "IF";
+}
+dmIf > expression:before {
+    content: "Condition";
+}
+
+dialog {
+    display: block;
+    border: 1pt solid black;
+    margin-left: 2cm;
+    margin-right: 2cm;
+}
+dialogGroup {
+    display: block;
+}
+dialogGroup [dialogSeparator="1"] {
+    border-top: 2pt ridge black;
+}
+
