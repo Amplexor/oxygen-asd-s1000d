@@ -130,7 +130,9 @@ pmRef:before {
 pmEntry > dmRef:before, pmentry > refdm:before {
     content: url("page_white_link.png") " " !important;
 }
-
+pmEntry > dmRef {
+    display:block;
+}
     /* 
       Creation of link: https://www.oxygenxml.com/doc/versions/18/ug-editorEclipse/topics/dg-link-elements.html 
         https://www.oxygenxml.com/doc/versions/18/ug-editor/concepts/dg-oxy-link-text.html
