@@ -18,6 +18,7 @@
 						<String-array>
 							<String>${framework}/testOXygen.jar</String>
 							<String>${framework(DocBook 5)}docbook.jar</String>
+							<String>${framework}/i18n/</String>
 						</String-array>
 					</field>
 					<field name="parentClassLoaderID">
@@ -75,10 +76,10 @@
 											<String>subscript</String>
 										</field>
 										<field name="name">
-											<String>subscript</String>
+											<String>${i18n(subscript)}</String>
 										</field>
 										<field name="description">
-											<String>Subscript</String>
+											<String>${i18n(subscript_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text subscript.png</String>
@@ -121,10 +122,10 @@
 											<String>superscript</String>
 										</field>
 										<field name="name">
-											<String>Superscript</String>
+											<String>${i18n(superscript)}</String>
 										</field>
 										<field name="description">
-											<String>Superscript</String>
+											<String>${i18n(superscript_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text superscript.png</String>
@@ -167,10 +168,10 @@
 											<String>bold</String>
 										</field>
 										<field name="name">
-											<String>bold</String>
+											<String>${i18n(bold)}</String>
 										</field>
 										<field name="description">
-											<String>Bold</String>
+											<String>${i18n(bold_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text bold.png</String>
@@ -213,10 +214,10 @@
 											<String>italic</String>
 										</field>
 										<field name="name">
-											<String>Italic</String>
+											<String>${i18n(italic)}</String>
 										</field>
 										<field name="description">
-											<String>Italic</String>
+											<String>${i18n(italic_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text italic.png</String>
@@ -259,10 +260,10 @@
 											<String>underline</String>
 										</field>
 										<field name="name">
-											<String>Underline</String>
+											<String>${i18n(underline)}</String>
 										</field>
 										<field name="description">
-											<String>Underline</String>
+											<String>${i18n(underline_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text underline.png</String>
@@ -305,10 +306,10 @@
 											<String>overline</String>
 										</field>
 										<field name="name">
-											<String>Overline</String>
+											<String>${i18n(overline)}</String>
 										</field>
 										<field name="description">
-											<String>Overline</String>
+											<String>${i18n(overline_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text overline.png</String>
@@ -351,10 +352,10 @@
 											<String>strike</String>
 										</field>
 										<field name="name">
-											<String>Strike</String>
+											<String>${i18n(strike)}</String>
 										</field>
 										<field name="description">
-											<String>Strikethrough</String>
+											<String>${i18n(strike_description)}</String>
 										</field>
 										<field name="largeIconPath">
 											<String>${framework}/uiicons/text strikethrough.png</String>
