@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<serialized version="20.1" xml:space="preserve">
+<serialized version="21.0" xml:space="preserve">
 	<serializableOrderedMap>
 		<entry>
 			<String>document.types</String>
@@ -30,7 +30,7 @@
 								<cssFile-array>
 									<cssFile>
 										<field name="href">
-											<String>${framework}\style\dmodule.css</String>
+											<String>${framework}/style/dmodule.css</String>
 										</field>
 										<field name="title">
 											<String>Style CSS par défaut</String>
@@ -41,7 +41,7 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}\style\dmodule-alt1.css</String>
+											<String>${framework}/style/dmodule-alt1.css</String>
 										</field>
 										<field name="title">
 											<String>Large font</String>
@@ -52,7 +52,7 @@
 									</cssFile>
 									<cssFile>
 										<field name="href">
-											<String>${framework}\style\refs-edit-inline.css</String>
+											<String>${framework}/style/refs-edit-inline.css</String>
 										</field>
 										<field name="title">
 											<String>Edit dmRefs in inline forms</String>
