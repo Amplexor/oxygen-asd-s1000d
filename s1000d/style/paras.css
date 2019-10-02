@@ -156,8 +156,11 @@ acronym {
     /* TODO */
 }
 
-acronymText {
-    /* TODO */
+acronymTerm {
+    color: green;
+}
+acronymDefinition {
+    font-style: italic;
 }
 indexFlag {
     /* TODO */
