@@ -1,5 +1,7 @@
 # oXygen framework for ASD S1000D
 
+👋 This repository was migrated to https://github.com/acolad-digital/oxygen-asd-s1000d
+
 Provides support in SyncroSoft oXygenXML for working with S1000D files (XML only).
 
 ## What is S1000D?
